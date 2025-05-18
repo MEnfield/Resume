@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, useTheme } from "@mui/material";
+import { Box, Grid, Link, Typography, useTheme } from "@mui/material";
 import { FC, useState } from "react";
 
 const HeaderContainer: FC = ({}) => {
@@ -40,9 +40,11 @@ const HeaderContainer: FC = ({}) => {
             </Grid>
             <Grid container direction="row" gap={1}>
               <Grid>
-                <Typography component="h2" fontSize="24px" color="white.main">
-                  (561) 699-0925
-                </Typography>
+                <Link href="tel:5616990925">
+                  <Typography component="h2" fontSize="24px" color="white.main">
+                    (561) 699-0925
+                  </Typography>
+                </Link>
               </Grid>
               <Grid>
                 <Typography component="h2" fontSize="24px" color="white.main">
@@ -50,9 +52,11 @@ const HeaderContainer: FC = ({}) => {
                 </Typography>
               </Grid>
               <Grid>
-                <Typography component="h2" fontSize="24px" color="white.main">
-                  MitchEnfield@gmail.com
-                </Typography>
+                <Link href="mailto: MitchEnfield@gmail.com">
+                  <Typography component="h2" fontSize="24px" color="white.main">
+                    MitchEnfield@gmail.com
+                  </Typography>
+                </Link>
               </Grid>
             </Grid>
           </Grid>
@@ -81,7 +85,7 @@ const HeaderContainer: FC = ({}) => {
               </linearGradient>
             </defs>
             <path
-              d="M0.00,20 C149.99,80.00 271.49,-20 500.00,20 L500.00,0.00 L0.00,0.00 Z"
+              d="M0.00,20 C149.99,60.00 271.49,-5 500.00,20 L500.00,0.00 L0.00,0.00 Z"
               fill="url(#grad)"
             />
           </svg>
@@ -97,7 +101,7 @@ const HeaderContainer: FC = ({}) => {
         >
           <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
             <path
-              d="M0.00,20 C149.99,80.00 271.49,-20 500.00,20 L500.00,0.00 L0.00,0.00 Z"
+              d="M0.00,20 C149.99,60.00 271.49,-5 500.00,20 L500.00,0.00 L0.00,0.00 Z"
               fill={theme.palette.accent.main}
             />
           </svg>

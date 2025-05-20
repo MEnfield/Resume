@@ -42,11 +42,11 @@ declare module "@mui/material/Button" {
 }
 
 const themeStyles = {
-  fontFamily: "roboto, arial, san_serif",
-  fontRegular: "roboto, arial, san_serif",
-  fontMedium: "roboto, arial, san_serif",
-  fontBold: "roboto, arial, san_serif",
-  fontLight: "roboto, arial, san_serif",
+  fontFamily: "Roboto, arial, san_serif",
+  fontRegular: "Roboto, arial, san_serif",
+  fontMedium: "Roboto, arial, san_serif",
+  fontBold: "Roboto, arial, san_serif",
+  fontLight: "Roboto, arial, san_serif",
   fontAccent: "'allstate_accent', arial, san_serif",
   borderRadius: 0,
   textH1Size: "2.5rem",
@@ -94,7 +94,7 @@ const theme = createTheme({
   typography: {
     fontFamily: themeStyles.fontFamily,
     sectionHeader: {
-      fontFamily: "roboto-mono, roboto, arial, san_serif",
+      fontFamily: "Roboto Mono, Roboto, arial, san_serif",
       fontSize: "40px",
       lineHeight: "52px",
     },

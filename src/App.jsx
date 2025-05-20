@@ -2,6 +2,7 @@ import { Box, Grid } from "@mui/material";
 import Header from "./views/Header";
 import AboutMe from "./views/AboutMe";
 import SideNav from "./Views/SideNav";
+import WorkExperience from "./views/WorkExperience";
 
 function App() {
   const drawerWidth = "96px";
@@ -19,6 +20,9 @@ function App() {
         </Grid>
         <Grid>
           <AboutMe />
+        </Grid>
+        <Grid>
+          <WorkExperience />
         </Grid>
       </Grid>
     </Box>

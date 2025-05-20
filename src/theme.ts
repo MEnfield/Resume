@@ -18,18 +18,18 @@ declare module "@mui/material/styles" {
   }
 
   interface TypographyVariants {
-    standardInverted: React.CSSProperties;
+    sectionHeader: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
-    standardInverted?: React.CSSProperties;
+    sectionHeader?: React.CSSProperties;
   }
 }
 
 // Update the Typography's variant prop options
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
-    standardInverted: true;
+    sectionHeader: true;
   }
 }
 
@@ -93,6 +93,11 @@ const theme = createTheme({
 
   typography: {
     fontFamily: themeStyles.fontFamily,
+    sectionHeader: {
+      fontFamily: "roboto-mono, roboto, arial, san_serif",
+      fontSize: "40px",
+      lineHeight: "52px",
+    },
     // h1: {
     //   fontFamily: themeStyles.fontBold,
     //   fontSize: themeStyles.textH1Size,

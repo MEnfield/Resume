@@ -1,7 +1,7 @@
 import { Box, Grid, Link, SvgIcon, Typography } from "@mui/material";
 import { FC, JSX, ReactElement, useState } from "react";
 import WorkCard from "../components/WorkCard";
-import { work } from "../data/data";
+import { jobs } from "../data/data";
 
 const WorkExperience: FC = ({}) => {
   // Component variables
@@ -14,6 +14,7 @@ const WorkExperience: FC = ({}) => {
 
   return (
     <Box
+      id="work-experience"
       sx={(theme) => ({
         p: theme.spacing(6, 12),
         backgroundColor: "secondary.main",
@@ -38,14 +39,21 @@ const WorkExperience: FC = ({}) => {
                 LinkedIn Profile
               </Link>{" "}
               or{" "}
-              <Link color="text.primary" fontWeight="bold">
+              <Link
+                component="a"
+                download="Resume - Mitchell Enfield.pdf"
+                href="/src/assets/Resume.pdf"
+                color="text.primary"
+                fontWeight="bold"
+                sx={{ cursor: "pointer" }}
+              >
                 download my resume
               </Link>
             </Typography>
           </Grid>
         </Grid>
         <Grid container direction="column" gap={2}>
-          {work.map((work, index) => (
+          {jobs.map((work, index) => (
             <Grid key={index}>
               <WorkCard
                 title={work.title}

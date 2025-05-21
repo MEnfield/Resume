@@ -4,12 +4,12 @@ import HealthNetworkLogo from "../assets/healthnetwork_logo.svg";
 import BidtellectLogo from "../assets/bidtellect_logo.svg";
 import DriversAlert from "../assets/drivers_alert_logo.svg";
 
-export const work: Work[] = [
+export const jobs: Work[] = [
   {
     title: "Freelance Full-stack Developer",
     company: "Health Network",
     time: "July 2023 - Present",
-    description: `Served as a freelance full-stack developer for Health Network, contributing to the setup and optimization of their platform for health insurance sales. Key responsibilities included and implementing backend API endpoints for the client to use, as well as developing client-facing frontend platform. Utilized NextJS as the development framework, leveraging Redis for efficient user data caching and MySQL for robust data storage. Successfully delivered high-quality solutions that enhanced the platform's overall performance and user experience.`,
+    description: `I've done some contracting work as a freelance full-stack developer for Health Network where I have contributed to the setup and optimization of their platform for health insurance sales. My key responsibilities included implementing backend API endpoints for the client to use as well as developing client-facing frontend platform. I have utilized NextJS as the development framework, leveraging Redis for efficient user data caching and MySQL for robust data storage. Successfully delivered high-quality solutions that enhanced the platform's overall performance and user experience.`,
     icon: <img src={HealthNetworkLogo} />,
   },
   {

@@ -1,6 +1,5 @@
 import { Divider, Grid, Paper, Typography } from "@mui/material";
 import { FC, ReactElement } from "react";
-import SimplifiLogo from "../assets/simplifi_logo.svg";
 
 const WorkCard: FC<{
   title: string;

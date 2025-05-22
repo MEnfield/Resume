@@ -13,4 +13,5 @@ export type Project = {
   description: string;
   githubUrl: string;
   figmaUrl: string;
+  previewUrl: string;
 };

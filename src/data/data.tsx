@@ -53,6 +53,8 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/MEnfield/Jam-sesh-ui",
     figmaUrl:
       "https://www.figma.com/proto/PdZwQAZXU8baVBUvJH1uNq/Jam-Sesh---Mobile?node-id=243-1741&p=f&t=FgnoDCGIxHm7KrzU-1&scaling=min-zoom&content-scaling=fixed&page-id=55%3A282&starting-point-node-id=243%3A1741",
+    previewUrl:
+      "https://github.com/user-attachments/assets/42251a2d-3e9a-463e-ae0a-f3cf784e1257",
   },
   {
     title: "Resume",
@@ -61,6 +63,8 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/MEnfield/best-in-boca-petsitters",
     figmaUrl:
       "https://www.figma.com/proto/gd2CftzKBuqETnKvx9hLS0/Best-in-Boca-Petsitters?node-id=3-2&p=f&t=OF6oIy9MIc6ldm9S-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2",
+    previewUrl:
+      "https://github.com/user-attachments/assets/05d22b30-38bc-485e-9a95-b11e20b2595d",
   },
   {
     title: "Best in Boca Petsitters",
@@ -69,5 +73,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/MEnfield/best-in-boca-petsitters",
     figmaUrl:
       "https://www.figma.com/proto/gd2CftzKBuqETnKvx9hLS0/Best-in-Boca-Petsitters?node-id=3-2&p=f&t=OF6oIy9MIc6ldm9S-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2",
+    previewUrl:
+      "https://github.com/user-attachments/assets/751d66c9-15da-4c87-9208-0e6b65c5b325",
   },
 ];

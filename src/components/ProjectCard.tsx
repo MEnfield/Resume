@@ -13,9 +13,10 @@ import { DesignServices, GitHub } from "@mui/icons-material";
 const ProjectCard: FC<{
   title: string;
   description: string;
-  githubUrl?: string;
-  figmaUrl?: string;
-}> = ({ title, description, githubUrl, figmaUrl }) => {
+  githubUrl: string;
+  figmaUrl: string;
+  previewUrl: string;
+}> = ({ title, description, githubUrl, figmaUrl, previewUrl }) => {
   // Component variables
 
   // Component state
@@ -107,8 +108,12 @@ const ProjectCard: FC<{
           <Box
             height={250}
             width="100%"
-            sx={{ backgroundColor: "tertiary.main" }}
-          />
+            textAlign="center"
+            bgcolor="accent.main"
+            borderRadius="3px"
+          >
+            <img src={previewUrl} height="100%" />
+          </Box>
         </Grid>
         <Grid>
           <Typography fontSize={20} lineHeight="24px" color="white.main">

@@ -18,6 +18,8 @@ const Projects: FC = ({}) => {
       id="projects"
       sx={(theme) => ({
         p: theme.spacing(8, 12),
+        borderTop: (theme) => `3px dotted ${theme.palette.tertiary.main}`,
+
         [theme.breakpoints.down("md")]: {
           p: (theme) => theme.spacing(2, 2, 2, 2),
         },

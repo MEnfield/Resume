@@ -47,7 +47,7 @@ const Projects: FC = ({}) => {
           </Grid>
         </Grid>
 
-        <Grid container direction="row" alignItems="flex-start" gap={2}>
+        <Grid container direction="row" gap={2} alignItems="stretch">
           {projects.map((project) => (
             <Grid size={{ xs: 12, md: "grow" }}>
               <ProjectCard {...project} />

@@ -156,10 +156,10 @@ const theme = createTheme({
           fontSize: "14px",
           textAlign: "center",
         },
-        tooltipArrow: {
-          backgroundColor: themeStyles.primary,
-          borderColor: themeStyles.primary,
-          fill: themeStyles.primary,
+        arrow: {
+          "&::before": {
+            color: themeStyles.primary,
+          },
         },
       },
     },

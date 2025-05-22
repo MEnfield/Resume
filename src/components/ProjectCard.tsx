@@ -29,7 +29,7 @@ const ProjectCard: FC<{
     <Paper
       sx={{
         p: (theme) => theme.spacing(2, 4),
-        borderRadius: 4,
+        borderRadius: 2,
         backgroundColor: "secondary.main",
         height: "100%",
       }}
@@ -54,9 +54,6 @@ const ProjectCard: FC<{
                   placement="top"
                   arrow
                   title="View this project's code repository on GitHub"
-                  sx={{
-                    "& .MuiTooltip-arrow": { color: "secondary.main" },
-                  }}
                 >
                   <Link href={githubUrl}>
                     <IconButton
@@ -81,9 +78,6 @@ const ProjectCard: FC<{
                   placement="top"
                   arrow
                   title="View the design file I created for this project"
-                  sx={{
-                    "& .MuiTooltip-arrow": { color: "secondary.main" },
-                  }}
                 >
                   <Link href={figmaUrl}>
                     <IconButton
@@ -112,7 +106,14 @@ const ProjectCard: FC<{
             bgcolor="accent.main"
             borderRadius="3px"
           >
-            <img src={previewUrl} height="100%" />
+            <Link href={githubUrl}>
+              <img
+                src={previewUrl}
+                height="100%"
+                style={{ cursor: "pointer" }}
+                alt={`${title}-preview`}
+              />
+            </Link>
           </Box>
         </Grid>
         <Grid>

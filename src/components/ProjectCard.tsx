@@ -4,11 +4,13 @@ import {
   IconButton,
   Link,
   Paper,
+  Skeleton,
   Tooltip,
   Typography,
 } from "@mui/material";
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import { DesignServices, GitHub } from "@mui/icons-material";
+import LazyImage from "./LazyImage";
 
 const ProjectCard: FC<{
   title: string;
@@ -33,7 +35,7 @@ const ProjectCard: FC<{
         backgroundColor: "secondary.main",
         height: "100%",
       }}
-      elevation={2}
+      elevation={4}
     >
       <Grid container direction="column" gap={2}>
         <Grid container direction="row">
@@ -106,14 +108,29 @@ const ProjectCard: FC<{
             bgcolor="accent.main"
             borderRadius="3px"
           >
-            <Link href={githubUrl}>
-              <img
-                src={previewUrl}
-                height="100%"
-                style={{ cursor: "pointer" }}
-                alt={`${title}-preview`}
-              />
-            </Link>
+            <Suspense
+              fallback={
+                <Skeleton variant="rectangular" height="100%" width={200} />
+              }
+            >
+              <Link href={githubUrl}>
+                <LazyImage
+                  imageProps={{
+                    height: "100%",
+                    style: { cursor: "pointer" },
+                    alt: `${title}-preview`,
+                  }}
+                  src={previewUrl}
+                  fallback={
+                    <Skeleton
+                      variant="rectangular"
+                      height="100%"
+                      width="200px"
+                    />
+                  }
+                />
+              </Link>
+            </Suspense>
           </Box>
         </Grid>
         <Grid>

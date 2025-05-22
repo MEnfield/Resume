@@ -1,4 +1,4 @@
-import { Work } from "./types";
+import { Project, Work } from "./types";
 import SimplifiLogo from "../assets/simplifi_logo.svg";
 import HealthNetworkLogo from "../assets/healthnetwork_logo.svg";
 import BidtellectLogo from "../assets/bidtellect_logo.svg";
@@ -42,5 +42,32 @@ As a UI/UX Developer at Bidtellect, I was responsible for a wide range of tasks,
     time: "June 2017 - February 2019",
     description: `After completing my Bachelor of Science degree in Computer Science, I joined Driver's Alert as a full-stack developer. In this role, I was responsible for leading the design and development of the company's platform redesign, leveraging a modernized technology stack at the time comprising ReactJS, Node.js, Express, and MSSQL. Throughout this project, I gained comprehensive knowledge of the platform development lifecycle, including requirements gathering from stakeholders, database design using Entity-Relationship Diagrams (ERDs), and user interface (UI) wireframing using Balsamiq. This experience enabled me to develop a holistic understanding of the platform development process, from conceptualization to deployment.`,
     icon: <img src={DriversAlert} />,
+  },
+];
+
+export const projects: Project[] = [
+  {
+    title: "Jam Sesh",
+    description:
+      "This is a project I'm currently working on that will allow users to schedule jam sessions with one another as well as allow companies to create public gig listings that users can sign up to attend.",
+    githubUrl: "https://github.com/MEnfield/Jam-sesh-ui",
+    figmaUrl:
+      "https://www.figma.com/proto/PdZwQAZXU8baVBUvJH1uNq/Jam-Sesh---Mobile?node-id=243-1741&p=f&t=FgnoDCGIxHm7KrzU-1&scaling=min-zoom&content-scaling=fixed&page-id=55%3A282&starting-point-node-id=243%3A1741",
+  },
+  {
+    title: "Resume",
+    description:
+      "This project is what led to the creation of the website you're currently visiting. It's a static webpage built in React that features my resume, portfolio, and contact information.",
+    githubUrl: "https://github.com/MEnfield/best-in-boca-petsitters",
+    figmaUrl:
+      "https://www.figma.com/proto/gd2CftzKBuqETnKvx9hLS0/Best-in-Boca-Petsitters?node-id=3-2&p=f&t=OF6oIy9MIc6ldm9S-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2",
+  },
+  {
+    title: "Best in Boca Petsitters",
+    description:
+      "This project was setup to help my mother in law attract customers for her pet sitting business. This website is a static webpage built in React that details her services, testimonial, and a gallery of the pets she has worked with.",
+    githubUrl: "https://github.com/MEnfield/best-in-boca-petsitters",
+    figmaUrl:
+      "https://www.figma.com/proto/gd2CftzKBuqETnKvx9hLS0/Best-in-Boca-Petsitters?node-id=3-2&p=f&t=OF6oIy9MIc6ldm9S-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2",
   },
 ];

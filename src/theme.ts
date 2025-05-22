@@ -97,6 +97,7 @@ const theme = createTheme({
       fontFamily: "Roboto Mono, Roboto, arial, san_serif",
       fontSize: "40px",
       lineHeight: "52px",
+      // fontWeight: "bold",
     },
     // h1: {
     //   fontFamily: themeStyles.fontBold,
@@ -138,15 +139,31 @@ const theme = createTheme({
   //   borderRadius: themeStyles.borderRadius,
   // },
 
-  // components: {
-  //   MuiPaper: {
-  //     styleOverrides: {
-  //       root: {
-  //         borderRadius: "3px",
-  //       },
-  //     },
-  //   },
-  // },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: "3px",
+        },
+      },
+    },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          borderRadius: "8px",
+          padding: "16px",
+          backgroundColor: themeStyles.primary,
+          fontSize: "14px",
+          textAlign: "center",
+        },
+        tooltipArrow: {
+          backgroundColor: themeStyles.primary,
+          borderColor: themeStyles.primary,
+          fill: themeStyles.primary,
+        },
+      },
+    },
+  },
 
   // breakpoints: {
   //   values: {

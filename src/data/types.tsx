@@ -7,3 +7,10 @@ export type Work = {
   description: string;
   icon: ReactElement;
 };
+
+export type Project = {
+  title: string;
+  description: string;
+  githubUrl: string;
+  figmaUrl: string;
+};

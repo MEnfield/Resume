@@ -1,5 +1,7 @@
 import { Box, Grid, Link, Typography } from "@mui/material";
 import { FC, useState } from "react";
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "../data/data";
 
 const Projects: FC = ({}) => {
   // Component variables
@@ -17,14 +19,14 @@ const Projects: FC = ({}) => {
       sx={(theme) => ({
         p: theme.spacing(8, 12),
         [theme.breakpoints.down("md")]: {
-          p: (theme) => theme.spacing(2, 2, 0, 2),
+          p: (theme) => theme.spacing(2, 2, 2, 2),
         },
       })}
     >
       <Grid container direction="column" gap={4}>
         <Grid container direction="column" gap={2} textAlign="center">
           <Grid>
-            <Typography variant="sectionHeader" color="secondary">
+            <Typography variant="sectionHeader" color="accent">
               My Portfolio
             </Typography>
           </Grid>
@@ -41,6 +43,14 @@ const Projects: FC = ({}) => {
               </Link>
             </Typography>
           </Grid>
+        </Grid>
+
+        <Grid container direction="row" alignItems="flex-start" gap={2}>
+          {projects.map((project) => (
+            <Grid size={{ xs: 12, md: "grow" }}>
+              <ProjectCard {...project} />
+            </Grid>
+          ))}
         </Grid>
       </Grid>
     </Box>

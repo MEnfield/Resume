@@ -6,6 +6,7 @@ import WorkExperience from "./views/WorkExperience";
 import Projects from "./views/Projects";
 import Skills from "./views/Skills";
 import Education from "./views/Education";
+import Footer from "./views/Footer";
 
 function App() {
   const drawerWidth = "96px";
@@ -35,6 +36,9 @@ function App() {
         </Grid>
         <Grid>
           <Education />
+        </Grid>
+        <Grid>
+          <Footer />
         </Grid>
       </Grid>
     </Box>

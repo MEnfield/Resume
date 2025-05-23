@@ -6,7 +6,7 @@ const WorkCard: FC<{
   company: string;
   time: string;
   description: string;
-  icon: ReactElement;
+  icon: string;
 }> = ({ title, company, time, description, icon }) => {
   // Component variables
 

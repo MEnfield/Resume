@@ -97,7 +97,6 @@ const theme = createTheme({
       fontFamily: "Roboto Mono, Roboto, arial, san_serif",
       fontSize: "40px",
       lineHeight: "52px",
-      // fontWeight: "bold",
     },
     // h1: {
     //   fontFamily: themeStyles.fontBold,

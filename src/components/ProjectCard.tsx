@@ -108,29 +108,19 @@ const ProjectCard: FC<{
             bgcolor="accent.main"
             borderRadius="3px"
           >
-            <Suspense
-              fallback={
-                <Skeleton variant="rectangular" height="100%" width={200} />
-              }
-            >
-              <Link href={githubUrl}>
-                <LazyImage
-                  imageProps={{
-                    height: "100%",
-                    style: { cursor: "pointer" },
-                    alt: `${title}-preview`,
-                  }}
-                  src={previewUrl}
-                  fallback={
-                    <Skeleton
-                      variant="rectangular"
-                      height="100%"
-                      width="200px"
-                    />
-                  }
-                />
-              </Link>
-            </Suspense>
+            <Link href={githubUrl}>
+              <LazyImage
+                imageProps={{
+                  height: "100%",
+                  style: { cursor: "pointer" },
+                  alt: `${title}-preview`,
+                }}
+                src={previewUrl}
+                fallback={
+                  <Skeleton variant="rectangular" height="100%" width="200px" />
+                }
+              />
+            </Link>
           </Box>
         </Grid>
         <Grid>

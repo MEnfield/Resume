@@ -77,3 +77,17 @@ export const projects: Project[] = [
       "https://github.com/user-attachments/assets/751d66c9-15da-4c87-9208-0e6b65c5b325",
   },
 ];
+
+export const skills: string[] = [
+  "Javascript",
+  "Typescript",
+  "React",
+  "Node.js",
+  "NextJS",
+  "MSSQL",
+  "POSTGRES",
+  "Graphql",
+  "Angular",
+  "REST API",
+  "Figma",
+];

@@ -4,6 +4,7 @@ import AboutMe from "./views/AboutMe";
 import SideNav from "./Views/SideNav";
 import WorkExperience from "./views/WorkExperience";
 import Projects from "./views/Projects";
+import Skills from "./views/Skills";
 
 function App() {
   const drawerWidth = "96px";
@@ -27,6 +28,9 @@ function App() {
         </Grid>
         <Grid>
           <Projects />
+        </Grid>
+        <Grid>
+          <Skills />
         </Grid>
       </Grid>
     </Box>

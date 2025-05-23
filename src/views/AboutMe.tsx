@@ -1,5 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { FC } from "react";
+import Headshot from "../assets/headshot.png";
 
 const AboutMe: FC = ({}) => {
   // Component variables
@@ -77,8 +78,16 @@ const AboutMe: FC = ({}) => {
               borderRadius: 50,
               position: "relative",
               zIndex: 2,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-          />
+          >
+            <img
+              src={Headshot}
+              style={{ maxHeight: "200px", borderRadius: 250 }}
+            />
+          </Box>
           <Box
             sx={{
               position: "absolute",

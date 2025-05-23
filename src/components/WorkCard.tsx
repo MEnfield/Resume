@@ -23,7 +23,11 @@ const WorkCard: FC<{
     >
       <Grid container direction="column" gap={3}>
         <Grid container direction="row" alignItems="center" gap={2}>
-          {!!icon && <Grid>{icon}</Grid>}
+          {!!icon && (
+            <Grid>
+              <img src={icon} style={{ borderRadius: "3px" }} />
+            </Grid>
+          )}
           <Grid>
             <Typography
               color="secondary"

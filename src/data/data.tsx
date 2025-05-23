@@ -10,7 +10,7 @@ export const jobs: Work[] = [
     company: "Health Network",
     time: "July 2023 - Present",
     description: `I've done some contracting work as a freelance full-stack developer for Health Network where I have contributed to the setup and optimization of their platform for health insurance sales. My key responsibilities included implementing backend API endpoints for the client to use as well as developing client-facing frontend platform. I have utilized NextJS as the development framework, leveraging Redis for efficient user data caching and MySQL for robust data storage. Successfully delivered high-quality solutions that enhanced the platform's overall performance and user experience.`,
-    icon: <img src={HealthNetworkLogo} />,
+    icon: HealthNetworkLogo,
   },
   {
     title: "Senior UI/UX Developer",
@@ -26,7 +26,7 @@ export const jobs: Work[] = [
             built with AngularJS, contributed to the development of a new
             platform using ReactJS, and utilized Figma to design and prototype
             new features prior to implementation.`,
-    icon: <img src={SimplifiLogo} />,
+    icon: SimplifiLogo,
   },
   {
     title: "UI/UX Developer",
@@ -34,14 +34,14 @@ export const jobs: Work[] = [
     time: "February 2019 - March 2023",
     description: `Held an internship with Bidtellect from 2015-2016 while pursuing my Bachelor of Science degree in Computer Science. Following graduation, I was invited to re-engage with the company in 2019, when a full-time opportunity became available, and I was pleased to accept the offer.
 As a UI/UX Developer at Bidtellect, I was responsible for a wide range of tasks, showcasing my versatility and expertise in the field. Initially, I maintained and optimized the company's existing AngularJS platform, before leading the migration to a new ReactJS platform. Additionally, I took on a rotational Scrum leadership role, facilitating agile development processes and collaborating with cross-functional teams. I also utilized Figma to design and prototype new features, driving innovation and enhancing the platform's user experience.`,
-    icon: <img src={BidtellectLogo} />,
+    icon: BidtellectLogo,
   },
   {
     title: "Fullstack Developer",
     company: "Driver's Alert",
     time: "June 2017 - February 2019",
     description: `After completing my Bachelor of Science degree in Computer Science, I joined Driver's Alert as a full-stack developer. In this role, I was responsible for leading the design and development of the company's platform redesign, leveraging a modernized technology stack at the time comprising ReactJS, Node.js, Express, and MSSQL. Throughout this project, I gained comprehensive knowledge of the platform development lifecycle, including requirements gathering from stakeholders, database design using Entity-Relationship Diagrams (ERDs), and user interface (UI) wireframing using Balsamiq. This experience enabled me to develop a holistic understanding of the platform development process, from conceptualization to deployment.`,
-    icon: <img src={DriversAlert} />,
+    icon: DriversAlert,
   },
 ];
 

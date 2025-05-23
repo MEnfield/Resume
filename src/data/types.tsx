@@ -15,3 +15,8 @@ export type Project = {
   figmaUrl: string;
   previewUrl: string;
 };
+
+export type SidenavLink = {
+  url: string;
+  label: string;
+};

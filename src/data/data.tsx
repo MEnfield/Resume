@@ -1,4 +1,4 @@
-import { Project, Work } from "./types";
+import { Project, SidenavLink, Work } from "./types";
 import SimplifiLogo from "../assets/simplifi_logo.svg";
 import HealthNetworkLogo from "../assets/healthnetwork_logo.svg";
 import BidtellectLogo from "../assets/bidtellect_logo.svg";
@@ -90,4 +90,13 @@ export const skills: string[] = [
   "Angular",
   "REST API",
   "Figma",
+];
+
+export const sidenavLinks: SidenavLink[] = [
+  { url: "#about-me", label: "About Me" },
+  { url: "#work-experience", label: "Work Experience" },
+  { url: "#portfolio", label: "Portfolio" },
+  { url: "#skills", label: "Skills" },
+  { url: "#education", label: "Education" },
+  { url: "#contact", label: "Contact" },
 ];

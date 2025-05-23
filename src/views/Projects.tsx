@@ -15,7 +15,7 @@ const Projects: FC = ({}) => {
   return (
     <Box
       component="section"
-      id="projects"
+      id="portfolio"
       sx={(theme) => ({
         p: theme.spacing(8, 12),
         borderTop: (theme) => `3px dotted ${theme.palette.tertiary.main}`,

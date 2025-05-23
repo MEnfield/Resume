@@ -1,5 +1,6 @@
-import { Box, Drawer, Grid, Typography } from "@mui/material";
+import { Box, Drawer, Grid, Link, Typography } from "@mui/material";
 import { FC, useState } from "react";
+import { sidenavLinks } from "../data/data";
 
 const SideNav: FC<{ drawerWidth: number }> = ({ drawerWidth }) => {
   // Component variables
@@ -24,7 +25,42 @@ const SideNav: FC<{ drawerWidth: number }> = ({ drawerWidth }) => {
       }}
       variant="permanent"
       anchor="left"
-    />
+    >
+      <Grid container direction="column" height="100%">
+        <Grid height={150} alignSelf="center">
+          <Box
+            sx={{ width: "1px" }}
+            height="100%"
+            borderLeft={(theme) => `3px solid ${theme.palette.secondary.main}`}
+          />
+        </Grid>
+        <Grid container direction="column">
+          {sidenavLinks.map((link, index) => (
+            <Grid key={link.label}>
+              <Link href={link.url} color="text.primary" underline="none">
+                <Box textAlign="center" p={(theme) => theme.spacing(1, 0)}>
+                  <Typography
+                    fontSize={16}
+                    lineHeight="24px"
+                    color="white.main"
+                    fontWeight="bold"
+                  >
+                    {link.label}
+                  </Typography>
+                </Box>
+              </Link>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid size="grow" alignSelf="center">
+          <Box
+            sx={{ width: "1px" }}
+            height="100%"
+            borderLeft={(theme) => `3px solid white`}
+          />
+        </Grid>
+      </Grid>
+    </Drawer>
   );
 };
 

@@ -7,9 +7,13 @@ import Projects from "./views/Projects";
 import Skills from "./views/Skills";
 import Education from "./views/Education";
 import Footer from "./views/Footer";
+import { useState } from "react";
+import { sidenavLinks } from "./data/data";
 
-function App() {
+const App = () => {
   const drawerWidth = "96px";
+
+  const [activeSection, setActiveSection] = useState(sidenavLinks[0].url);
 
   return (
     <Box
@@ -43,6 +47,6 @@ function App() {
       </Grid>
     </Box>
   );
-}
+};
 
 export default App;

@@ -7,24 +7,52 @@ import Projects from "./views/Projects";
 import Skills from "./views/Skills";
 import Education from "./views/Education";
 import Footer from "./views/Footer";
-import { useState } from "react";
-import { sidenavLinks } from "./data/data";
+import { useEffect, useRef, useState } from "react";
 
 const App = () => {
   const drawerWidth = "96px";
+  const headerRef = useRef(null);
 
-  const [activeSection, setActiveSection] = useState(sidenavLinks[0].url);
+  const [headerOffset, setHeaderOffset] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    if (headerRef) {
+      setHeaderOffset(headerRef.current.offsetHeight);
+    }
+  }, [headerRef]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Box
       component="main"
       minHeight="100vh"
       backgroundColor="background.default"
+      paddingTop={`${headerOffset}px`}
     >
       <SideNav drawerWidth={drawerWidth} />
       <Grid container direction="column" pl={drawerWidth}>
         <Grid>
-          <Header />
+          <Header
+            headerRef={headerRef}
+            drawerWidth={drawerWidth}
+            isScrolling={isScrolling}
+          />
         </Grid>
         <Grid>
           <AboutMe />

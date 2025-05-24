@@ -54,7 +54,8 @@ const SideNav: FC<{ drawerWidth: number }> = ({ drawerWidth }) => {
                     color="white.main"
                     fontWeight="bold"
                     sx={{
-                      transition: "font-size 0.2s ease-in-out",
+                      transition:
+                        "font-size 0.2s ease-in-out, color 0.2s ease-in-out",
                       "&:hover": { fontSize: 18, color: "primary.main" },
                     }}
                   >

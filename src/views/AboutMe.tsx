@@ -72,7 +72,7 @@ const AboutMe: FC = ({}) => {
         <Grid
           sx={{
             position: "relative",
-            animation: "float 3s ease-in-out infinite 0.5s, growAndSpin 0.5s",
+            animation: "float 3s ease-in-out infinite 0.5s, fadeInScale 0.5s",
           }}
         >
           <Box

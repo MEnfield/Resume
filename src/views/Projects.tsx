@@ -55,7 +55,7 @@ const Projects: FC = ({}) => {
           flexWrap="wrap"
         >
           {projects.map((project) => (
-            <Grid size={{ xs: 12, md: 6, lg: "grow" }}>
+            <Grid size={{ xs: 12, md: 6, lg: "grow" }} key={project.title}>
               <ProjectCard {...project} />
             </Grid>
           ))}

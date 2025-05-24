@@ -45,6 +45,10 @@ const SideNav: FC<{ drawerWidth: number }> = ({ drawerWidth }) => {
                     transition: "background-color 0.2s ease-in-out",
                     "&:hover": {
                       backgroundColor: "accent.main",
+                      "& .MuiTypography-root": {
+                        fontSize: 18,
+                        color: "primary.main",
+                      },
                     },
                   }}
                 >
@@ -56,7 +60,6 @@ const SideNav: FC<{ drawerWidth: number }> = ({ drawerWidth }) => {
                     sx={{
                       transition:
                         "font-size 0.2s ease-in-out, color 0.2s ease-in-out",
-                      "&:hover": { fontSize: 18, color: "primary.main" },
                     }}
                   >
                     {link.label}

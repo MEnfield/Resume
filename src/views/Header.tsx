@@ -24,7 +24,6 @@ const Header: FC<{
 
   // Function binding
 
-  console.log({ isScrolling });
   return (
     <>
       <Box

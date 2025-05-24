@@ -31,19 +31,32 @@ const SideNav: FC<{ drawerWidth: number }> = ({ drawerWidth }) => {
           <Box
             sx={{ width: "1px" }}
             height="100%"
-            borderLeft={(theme) => `3px solid ${theme.palette.secondary.main}`}
+            borderLeft={(theme) => `3px solid ${theme.palette.white.main}`}
           />
         </Grid>
-        <Grid container direction="column">
-          {sidenavLinks.map((link, index) => (
+        <Grid container direction="column" gap={1}>
+          {sidenavLinks.map((link) => (
             <Grid key={link.label}>
               <Link href={link.url} color="text.primary" underline="none">
-                <Box textAlign="center" p={(theme) => theme.spacing(1, 0)}>
+                <Box
+                  textAlign="center"
+                  p={(theme) => theme.spacing(1, 0)}
+                  sx={{
+                    transition: "background-color 0.2s ease-in-out",
+                    "&:hover": {
+                      backgroundColor: "accent.main",
+                    },
+                  }}
+                >
                   <Typography
                     fontSize={16}
                     lineHeight="24px"
                     color="white.main"
                     fontWeight="bold"
+                    sx={{
+                      transition: "font-size 0.2s ease-in-out",
+                      "&:hover": { fontSize: 18, color: "primary.main" },
+                    }}
                   >
                     {link.label}
                   </Typography>

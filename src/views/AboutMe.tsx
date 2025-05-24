@@ -69,7 +69,12 @@ const AboutMe: FC = ({}) => {
           </Grid>
         </Grid>
 
-        <Grid sx={{ position: "relative" }}>
+        <Grid
+          sx={{
+            position: "relative",
+            animation: "float 3s ease-in-out infinite 0.5s, growAndSpin 0.5s",
+          }}
+        >
           <Box
             sx={{
               height: 275,
@@ -83,10 +88,23 @@ const AboutMe: FC = ({}) => {
               alignItems: "center",
             }}
           >
-            <img
-              src={Headshot}
-              style={{ maxHeight: "200px", borderRadius: 250 }}
-            />
+            <Box
+              sx={{
+                height: "250px",
+                borderRadius: 250,
+                width: "250px",
+                backgroundColor: "secondary.main",
+              }}
+            >
+              <img
+                src={Headshot}
+                style={{
+                  maxHeight: "100%",
+                  width: "100%",
+                  borderRadius: 250,
+                }}
+              />
+            </Box>
           </Box>
           <Box
             sx={{

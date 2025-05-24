@@ -10,6 +10,7 @@ import "@fontsource/roboto-mono/400.css";
 import "@fontsource/roboto-mono/400-italic.css";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme.js";
+import "./global.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

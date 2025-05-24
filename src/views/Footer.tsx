@@ -13,7 +13,7 @@ const Footer: FC = ({}) => {
   return (
     <Box
       component="section"
-      id="footer"
+      id="contact"
       sx={(theme) => ({
         p: theme.spacing(8, 12),
         borderTop: (theme) => `3px dotted ${theme.palette.accent.main}`,
@@ -31,8 +31,8 @@ const Footer: FC = ({}) => {
         </Grid>
         <Grid>
           <Typography fontSize={24} lineHeight="32px" color="white">
-            Thank you for taking the time to look through my webpage. If
-            youU+2019re interested in linking up, please reach out to me! <br />
+            Thank you for taking the time to look through my webpage. If you're
+            interested in linking up, please reach out to me! <br />
             My email is{" "}
             <Link
               fontWeight="bold"

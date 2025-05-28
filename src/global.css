@@ -2,6 +2,33 @@ html {
   scroll-behavior: smooth;
 }
 
+.fadeInScale {
+  animation: fadeInScale 1s ease-in-out;
+}
+
+.horizontalFlip {
+  animation: horizontalFlip 1s ease-in-out;
+}
+
+@keyframes horizontalFlip {
+  0% {
+    opacity: 0;
+    transform: scaleX(-0.5);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scaleX(0);
+  }
+  75% {
+    opacity: 0.5;
+    transform: scaleX(0.25);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
 @keyframes float {
   0% {
     transform: translateY(0);

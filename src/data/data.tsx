@@ -60,9 +60,9 @@ export const projects: Project[] = [
     title: "Resume",
     description:
       "This project is what led to the creation of the website you're currently visiting. It's a static webpage built in React that features my resume, portfolio, and contact information.",
-    githubUrl: "https://github.com/MEnfield/best-in-boca-petsitters",
+    githubUrl: "https://github.com/MEnfield/Resume",
     figmaUrl:
-      "https://www.figma.com/proto/gd2CftzKBuqETnKvx9hLS0/Best-in-Boca-Petsitters?node-id=3-2&p=f&t=OF6oIy9MIc6ldm9S-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2",
+      "https://www.figma.com/proto/l7iYQIzThNT22YBSo2yYzl/Resume-website?page-id=0%3A1&node-id=1-3&p=f&viewport=817%2C541%2C0.22&t=z4B33B72XPhcJArW-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A3",
     previewUrl:
       "https://github.com/user-attachments/assets/05d22b30-38bc-485e-9a95-b11e20b2595d",
   },

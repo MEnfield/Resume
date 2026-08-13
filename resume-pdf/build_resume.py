@@ -41,6 +41,9 @@ CONTACT = [
     ("github.com/MEnfield", "https://github.com/MEnfield"),
 ]
 
+# the name in the header is a live link through to the portfolio site
+PORTFOLIO_URL = "https://menfield.github.io/Resume/"
+
 SUMMARY = (
     "Full-stack engineer with 10 years shipping product in TypeScript. Currently own the shared component "
     "library and design-system tooling behind a health-insurance platform, used across its consumer and "
@@ -258,6 +261,13 @@ class Doc:
 
         self.y = 52
         self.text(ML, self.y, NAME, BLD, 25, INK, char_space=1.1)
+        nw = self.width(NAME, BLD, 25, 1.1)
+        self.c.linkURL(
+            PORTFOLIO_URL,
+            (ML, H - self.y - 6, ML + nw, H - self.y + 19),
+            relative=0,
+            thickness=0,
+        )
         self.y += 20
         self.text(ML, self.y, TITLE, SB, 10, ACCENT)
         self.y += 17

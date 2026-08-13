@@ -1,136 +1,136 @@
 import {
   Box,
-  Grid,
-  IconButton,
-  Link,
+  Button,
+  Chip,
   Paper,
-  Skeleton,
-  Tooltip,
+  Stack,
   Typography,
 } from "@mui/material";
-import { FC, Suspense } from "react";
-import { DesignServices, GitHub } from "@mui/icons-material";
-import LazyImage from "./LazyImage";
+import { DesignServices, GitHub, Launch } from "@mui/icons-material";
+import { FC } from "react";
+import { Project } from "../data/types";
 
-const ProjectCard: FC<{
-  title: string;
-  description: string;
-  githubUrl: string;
-  figmaUrl: string;
-  previewUrl: string;
-}> = ({ title, description, githubUrl, figmaUrl, previewUrl }) => {
-  // Component variables
-
-  // Component state
-
-  // Component effects
-
-  // Function binding
-
-  return (
-    <Paper
-      sx={{
-        p: (theme) => theme.spacing(2, 4),
-        borderRadius: 2,
-        backgroundColor: "secondary.main",
-        height: "100%",
-      }}
-      elevation={4}
+const ProjectCard: FC<Project> = ({
+  title,
+  tagline,
+  description,
+  stack,
+  liveUrl,
+  githubUrl,
+  figmaUrl,
+  featured,
+}) => (
+  <Paper
+    variant="outlined"
+    sx={{
+      height: "100%",
+      p: { xs: 2.5, md: featured ? 4 : 3 },
+      borderRadius: 3,
+      borderColor: featured ? "primary.main" : "divider",
+      display: "flex",
+      flexDirection: "column",
+      transition: "transform .2s ease, box-shadow .2s ease",
+      "&:hover": {
+        transform: "translateY(-3px)",
+        boxShadow: (theme) => `0 12px 32px ${theme.palette.primary.main}1F`,
+      },
+    }}
+  >
+    <Stack
+      direction="row"
+      justifyContent="space-between"
+      alignItems="flex-start"
+      gap={1}
     >
-      <Grid container direction="column" gap={2}>
-        <Grid container direction="row">
-          <Grid size="grow">
-            <Typography
-              fontSize={32}
-              lineHeight="36px"
-              fontWeight="bold"
-              color="white.main"
-            >
-              {title}
-            </Typography>
-          </Grid>
-          <Grid container direction="row" alignItems="center" gap={1}>
-            {!!githubUrl && (
-              <Grid>
-                <Tooltip
-                  placement="top"
-                  arrow
-                  title="View this project's code repository on GitHub"
-                >
-                  <Link href={githubUrl}>
-                    <IconButton
-                      sx={{
-                        bgcolor: "white.main",
-                        "&:hover": {
-                          bgcolor: "accent.main",
-                          color: "white.main",
-                        },
-                      }}
-                      color="secondary"
-                    >
-                      <GitHub />
-                    </IconButton>
-                  </Link>
-                </Tooltip>
-              </Grid>
-            )}
-            {!!figmaUrl && (
-              <Grid>
-                <Tooltip
-                  placement="top"
-                  arrow
-                  title="View the design file I created for this project"
-                >
-                  <Link href={figmaUrl}>
-                    <IconButton
-                      sx={{
-                        bgcolor: "white.main",
-                        "&:hover": {
-                          bgcolor: "accent.main",
-                          color: "white.main",
-                        },
-                      }}
-                      color="secondary"
-                    >
-                      <DesignServices />
-                    </IconButton>
-                  </Link>
-                </Tooltip>
-              </Grid>
-            )}
-          </Grid>
-        </Grid>
-        <Grid>
-          <Box
-            height={250}
-            width="100%"
-            textAlign="center"
-            bgcolor="accent.main"
-            borderRadius="3px"
+      <Box>
+        <Stack direction="row" alignItems="center" gap={1} flexWrap="wrap">
+          <Typography
+            variant="h3"
+            sx={{ fontSize: featured ? "1.6rem" : "1.25rem" }}
           >
-            <Link href={githubUrl}>
-              <LazyImage
-                imageProps={{
-                  height: "100%",
-                  style: { cursor: "pointer" },
-                  alt: `${title}-preview`,
-                }}
-                src={previewUrl}
-                fallback={
-                  <Skeleton variant="rectangular" height="100%" width="200px" />
-                }
-              />
-            </Link>
-          </Box>
-        </Grid>
-        <Grid>
-          <Typography fontSize={20} lineHeight="24px" color="white.main">
-            {description}
+            {title}
           </Typography>
-        </Grid>
-      </Grid>
-    </Paper>
-  );
-};
+          {featured && (
+            <Chip
+              label="Live"
+              size="small"
+              color="primary"
+              sx={{ height: 22, fontSize: 11 }}
+            />
+          )}
+        </Stack>
+        <Typography
+          variant="eyebrow"
+          component="p"
+          color="primary.main"
+          sx={{ mt: 0.75 }}
+        >
+          {tagline}
+        </Typography>
+      </Box>
+    </Stack>
+
+    <Typography
+      variant="body2"
+      sx={{ mt: 2, lineHeight: 1.7, color: "text.secondary", flexGrow: 1 }}
+    >
+      {description}
+    </Typography>
+
+    <Stack direction="row" flexWrap="wrap" gap={0.75} sx={{ mt: 2.5 }}>
+      {stack.map((tech) => (
+        <Chip
+          key={tech}
+          label={tech}
+          size="small"
+          variant="outlined"
+          sx={{ fontSize: 12 }}
+        />
+      ))}
+    </Stack>
+
+    <Stack direction="row" flexWrap="wrap" gap={1} sx={{ mt: 2.5 }}>
+      {liveUrl && (
+        <Button
+          size="small"
+          variant="contained"
+          startIcon={<Launch />}
+          component="a"
+          href={liveUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Visit site
+        </Button>
+      )}
+      {githubUrl && (
+        <Button
+          size="small"
+          variant="outlined"
+          startIcon={<GitHub />}
+          component="a"
+          href={githubUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Code
+        </Button>
+      )}
+      {figmaUrl && (
+        <Button
+          size="small"
+          variant="text"
+          startIcon={<DesignServices />}
+          component="a"
+          href={figmaUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Design
+        </Button>
+      )}
+    </Stack>
+  </Paper>
+);
 
 export default ProjectCard;

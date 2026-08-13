@@ -1,101 +1,180 @@
-import { Project, SidenavLink, Work } from "./types";
+import { Project, SidenavLink, SkillGroup, Stat, Work } from "./types";
 import SimplifiLogo from "../assets/simplifi_logo.svg";
 import HealthNetworkLogo from "../assets/healthnetwork_logo.svg";
 import BidtellectLogo from "../assets/bidtellect_logo.svg";
 import DriversAlert from "../assets/drivers_alert_logo.svg";
 
+export const profile = {
+  name: "Mitchell Enfield",
+  title: "Senior Software Engineer",
+  subtitle: "Full-Stack TypeScript & Design Systems",
+  location: "St. Johns, FL",
+  email: "MitchEnfield@gmail.com",
+  phone: "(561) 699-0925",
+  phoneHref: "tel:5616990925",
+  github: "https://github.com/MEnfield",
+  linkedin: "https://www.linkedin.com/in/mitchell-enfield-966014117/",
+  summary: `Full-stack engineer with 10 years shipping product in TypeScript. I currently own the shared
+component library and design-system tooling behind a health-insurance platform, used across its consumer
+and employer-facing applications. Outside of work I designed, built, and run Riff Circle, a production
+social platform for musicians, entirely on my own — schema and migrations through to billing, monitoring,
+and deploys.`,
+};
+
+export const stats: Stat[] = [
+  { value: "10 yrs", label: "Building software professionally" },
+  { value: "Since 2017", label: "Shipping React in production" },
+  { value: "8 apps", label: "Shipped across 4 employers" },
+];
+
 export const jobs: Work[] = [
   {
-    title: "Freelance Full-stack Developer",
-    company: "Health Network",
-    time: "July 2023 - Present",
-    description: `I've done some contracting work as a freelance full-stack developer for Health Network where I have contributed to the setup and optimization of their platform for health insurance sales. My key responsibilities included implementing backend API endpoints for the client to use as well as developing client-facing frontend platform. I have utilized NextJS as the development framework, leveraging Redis for efficient user data caching and MySQL for robust data storage. Successfully delivered high-quality solutions that enhanced the platform's overall performance and user experience.`,
+    company: "Allstate",
+    title: "Software Engineer, Senior Consultant II",
+    time: "Dec 2025 – Present",
+    meta: "Remote · Part-time",
+    current: true,
+    bullets: [
+      "Lead full-stack development across a TypeScript monorepo powering a suite of health-insurance products — a consumer shopping platform, employer and employee portals, and internal agent tooling.",
+      "Own the shared React component library used across the platform's applications — component architecture, theming API, accessibility baseline, documentation, and test coverage.",
+      "Created a Figma-to-code pipeline — a design-token fetch script plus a documented AI workflow — that turns a Figma component link into a themed, tested library component, eliminating a recurring class of design-parity defects.",
+      "Led front-end delivery of a group health-benefits quoting experience, rolled out incrementally behind feature flags, covering benefit configuration, live cost calculations, and per-employee breakdowns.",
+      "Shipped a bulk employer-data migration workflow end-to-end in the agent portal, from typed API client through upload validation and long-running job status.",
+      "Established the front-end testing standard, introducing shared API-mocking infrastructure and eliminating flaky, time-dependent tests across the suite.",
+      "Implemented multi-brand theming through a build-time brand-CSS package, letting one component library render distinct branded experiences across consumer, employer, and employee applications.",
+      "Drove accessibility and responsive fixes across the library and shopping flows, and extended shared Zod schemas across the API/portal boundary so contract changes surface as compile-time errors.",
+    ],
+  },
+  {
+    company: "HealthNetwork",
+    title: "Full-Stack Developer (Contract)",
+    time: "Jun 2023 – Dec 2025",
+    meta: "Remote · Part-time",
     icon: HealthNetworkLogo,
+    bullets: [
+      "Built features for the health-insurance application Allstate uses to onboard and manage group-policy customers.",
+      "Implemented server-side rendering and API routes in Next.js to improve performance and SEO.",
+      "Built responsive, accessible UI components in TypeScript, React, and Next.js for desktop and mobile.",
+      "Modeled and queried MySQL data covering policy records, customer groups, and transactional history.",
+    ],
   },
   {
-    title: "Senior UI/UX Developer",
     company: "Simpli.fi",
-    time: "May 2023 - Present",
-    description: `Following the acquisition of Bidtellect by Simpli.fi in 2023, I
-            transitioned into a frontend developer role, continuing to work on
-            the existing Bidtellect product, now rebranded. As a UI/UX
-            developer, my responsibilities remained consistent, encompassing the
-            design and development of new features, leadership of agile teams,
-            and collaboration with cross-functional teams across the platform.
-            During this tenure, I successfully maintained the legacy platform
-            built with AngularJS, contributed to the development of a new
-            platform using ReactJS, and utilized Figma to design and prototype
-            new features prior to implementation.`,
+    title: "Senior UI/UX Developer",
+    time: "Feb 2019 – Dec 2025",
+    meta: "Remote · Full-time",
     icon: SimplifiLogo,
+    bullets: [
+      "Architected and led the migration of a legacy AngularJS codebase to a modern React + TypeScript stack, cutting technical debt and reducing feature development time.",
+      "Led UI/UX for new product features, translating user needs and business goals into high-fidelity mockups and interactive prototypes in Figma.",
+      "Architected scalable client-side solutions in React and TypeScript with an emphasis on maintainability and runtime performance.",
+      "Mentored junior developers on front-end best practices and modern TypeScript, raising code quality and consistency across the team.",
+    ],
   },
   {
-    title: "UI/UX Developer",
-    company: "Bidtellect",
-    time: "February 2019 - March 2023",
-    description: `Held an internship with Bidtellect from 2015-2016 while pursuing my Bachelor of Science degree in Computer Science. Following graduation, I was invited to re-engage with the company in 2019, when a full-time opportunity became available, and I was pleased to accept the offer.
-As a UI/UX Developer at Bidtellect, I was responsible for a wide range of tasks, showcasing my versatility and expertise in the field. Initially, I maintained and optimized the company's existing AngularJS platform, before leading the migration to a new ReactJS platform. Additionally, I took on a rotational Scrum leadership role, facilitating agile development processes and collaborating with cross-functional teams. I also utilized Figma to design and prototype new features, driving innovation and enhancing the platform's user experience.`,
-    icon: BidtellectLogo,
-  },
-  {
-    title: "Fullstack Developer",
     company: "Driver's Alert",
-    time: "June 2017 - February 2019",
-    description: `After completing my Bachelor of Science degree in Computer Science, I joined Driver's Alert as a full-stack developer. In this role, I was responsible for leading the design and development of the company's platform redesign, leveraging a modernized technology stack at the time comprising ReactJS, Node.js, Express, and MSSQL. Throughout this project, I gained comprehensive knowledge of the platform development lifecycle, including requirements gathering from stakeholders, database design using Entity-Relationship Diagrams (ERDs), and user interface (UI) wireframing using Balsamiq. This experience enabled me to develop a holistic understanding of the platform development process, from conceptualization to deployment.`,
+    title: "Full-Stack Software Engineer",
+    time: "Jan 2017 – Feb 2019",
+    meta: "Deerfield Beach, FL · Full-time",
     icon: DriversAlert,
+    bullets: [
+      "Contributed to a full redesign of a legacy web application, modernizing the stack with Node.js, Express, and React to improve performance and maintainability.",
+      "Developed RESTful APIs in Node.js and Express to handle data operations and business logic, enabling a more modular and scalable backend.",
+      "Designed SQL Server queries and stored procedures to support new features and optimize database interactions.",
+      "Translated user requirements into technical tasks in design discussions, keeping front-end and backend work aligned.",
+    ],
+  },
+  {
+    company: "Bidtellect",
+    title: "Quality Intern, then Independent Quality Contractor",
+    time: "Mar – Nov 2016",
+    meta: "Delray Beach, FL · Part-time",
+    icon: BidtellectLogo,
+    bullets: [
+      "Reviewed developer code and designed test plans for a demand-side platform (DSP), documenting bugs, inconsistencies, and edge cases across core ad-serving features.",
+    ],
   },
 ];
 
 export const projects: Project[] = [
   {
-    title: "Jam Sesh",
-    description:
-      "This is a project I'm currently working on that will allow users to schedule jam sessions with one another as well as allow companies to create public gig listings that users can sign up to attend.",
-    githubUrl: "https://github.com/MEnfield/Jam-sesh-ui",
-    figmaUrl:
-      "https://www.figma.com/proto/PdZwQAZXU8baVBUvJH1uNq/Jam-Sesh---Mobile?node-id=243-1741&p=f&t=FgnoDCGIxHm7KrzU-1&scaling=min-zoom&content-scaling=fixed&page-id=55%3A282&starting-point-node-id=243%3A1741",
-    previewUrl:
-      "https://github.com/user-attachments/assets/42251a2d-3e9a-463e-ae0a-f3cf784e1257",
-  },
-  {
-    title: "Resume",
-    description:
-      "This project is what led to the creation of the website you're currently visiting. It's a static webpage built in React that features my resume, portfolio, and contact information.",
-    githubUrl: "https://github.com/MEnfield/Resume",
-    figmaUrl:
-      "https://www.figma.com/proto/l7iYQIzThNT22YBSo2yYzl/Resume-website?page-id=0%3A1&node-id=1-3&p=f&viewport=817%2C541%2C0.22&t=z4B33B72XPhcJArW-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A3",
-    previewUrl:
-      "https://github.com/user-attachments/assets/05d22b30-38bc-485e-9a95-b11e20b2595d",
-  },
-  {
-    title: "Best in Boca Petsitters",
-    description:
-      "This project was setup to help my mother in law attract customers for her pet sitting business. This website is a static webpage built in React that details her services, testimonial, and a gallery of the pets she has worked with.",
-    githubUrl: "https://github.com/MEnfield/best-in-boca-petsitters",
-    figmaUrl:
-      "https://www.figma.com/proto/gd2CftzKBuqETnKvx9hLS0/Best-in-Boca-Petsitters?node-id=3-2&p=f&t=OF6oIy9MIc6ldm9S-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2",
-    previewUrl:
-      "https://github.com/user-attachments/assets/751d66c9-15da-4c87-9208-0e6b65c5b325",
+    title: "Riff Circle",
+    tagline: "Sole designer, engineer, and operator",
+    description: `A production social platform where musicians find collaborators, book gigs, and manage
+bands, with map-based discovery of nearby players and events. I modeled the full relational domain —
+events, bands, setlists, messaging, reviews, and social graphs — evolved it through versioned migrations,
+and exposed it via type-safe tRPC routers. I run the entire production surface myself: Stripe billing with
+webhook reconciliation, rate limiting, bot protection, error monitoring, scheduled jobs, web push, and an
+installable PWA with offline support.`,
+    stack: [
+      "Next.js",
+      "tRPC",
+      "Prisma",
+      "PostgreSQL / PostGIS",
+      "Stripe",
+      "Supabase",
+      "PWA",
+    ],
+    liveUrl: "https://riffcircle.com",
+    featured: true,
   },
 ];
 
-export const skills: string[] = [
-  "Javascript",
-  "Typescript",
-  "React",
-  "Node.js",
-  "NextJS",
-  "MSSQL",
-  "POSTGRES",
-  "Graphql",
-  "Angular",
-  "REST API",
-  "Figma",
+export const skillGroups: SkillGroup[] = [
+  {
+    label: "Languages & Frameworks",
+    items: ["TypeScript", "JavaScript", "React", "Next.js", "Node.js", "Express"],
+  },
+  {
+    label: "Front-End",
+    items: [
+      "Design systems",
+      "Storybook",
+      "MUI",
+      "Tailwind / shadcn",
+      "WCAG accessibility",
+      "Responsive UI",
+    ],
+  },
+  {
+    label: "Back-End & Data",
+    items: [
+      "REST API design",
+      "Zod",
+      "MySQL",
+      "PostgreSQL",
+      "SQL Server",
+      "Prisma",
+    ],
+  },
+  {
+    label: "Testing",
+    items: ["Vitest", "Mock Service Worker", "React Testing Library", "Jest"],
+  },
+  {
+    label: "Tooling & Practice",
+    items: [
+      "Turborepo",
+      "pnpm",
+      "LaunchDarkly",
+      "Figma",
+      "CI/CD",
+      "AI-augmented development",
+    ],
+  },
 ];
+
+export const education = {
+  school: "Florida Atlantic University",
+  degree: "Bachelor of Science in Computer Science",
+  time: "2012 – 2016",
+  url: "https://www.fau.edu/",
+};
 
 export const sidenavLinks: SidenavLink[] = [
-  { url: "#about-me", label: "About Me" },
-  { url: "#work-experience", label: "Work Experience" },
-  { url: "#portfolio", label: "Portfolio" },
+  { url: "#about", label: "About" },
+  { url: "#experience", label: "Experience" },
+  { url: "#work", label: "Product" },
   { url: "#skills", label: "Skills" },
   { url: "#education", label: "Education" },
   { url: "#contact", label: "Contact" },

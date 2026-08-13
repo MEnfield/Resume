@@ -1,110 +1,39 @@
-import { Box, Grid, Link, Typography } from "@mui/material";
-import { FC, useState } from "react";
+import { Grid, Link } from "@mui/material";
+import { FC } from "react";
+import Section from "../components/Section";
+import Reveal from "../components/Reveal";
 import ProjectCard from "../components/ProjectCard";
-import { projects } from "../data/data";
-import { Waypoint } from "react-waypoint";
-import Animation from "../components/Animation";
+import { profile, projects } from "../data/data";
 
-const Projects: FC = ({}) => {
-  // Component variables
-
-  // Component state
-  const [isInViewport, setIsInViewport] = useState(false);
-
-  // Component effects
-
-  // Function binding
-
-  return (
-    <Waypoint onEnter={() => setIsInViewport(true)}>
-      <div>
-        <Box
-          component="section"
-          id="portfolio"
-          sx={(theme) => ({
-            p: theme.spacing(8, 12),
-            borderTop: (theme) => `3px dotted ${theme.palette.tertiary.main}`,
-
-            [theme.breakpoints.down("md")]: {
-              p: (theme) => theme.spacing(2, 2, 2, 2),
-            },
-          })}
+const Projects: FC = () => (
+  <Section
+    id="work"
+    label="Product"
+    title="Built and run solo"
+    intro={
+      <>
+        A product I designed, built, and operate end to end — not a demo. More
+        code on{" "}
+        <Link href={profile.github} target="_blank" rel="noreferrer">
+          GitHub
+        </Link>
+        .
+      </>
+    }
+  >
+    <Grid container spacing={3} alignItems="stretch">
+      {projects.map((project, index) => (
+        <Grid
+          key={project.title}
+          size={{ xs: 12, md: project.featured ? 12 : 6 }}
         >
-          <Grid container direction="column" gap={4}>
-            <Grid container direction="column" gap={2} textAlign="center">
-              <Grid>
-                <Animation
-                  animationName="fadeInScale"
-                  duration={500}
-                  beforeStyle={{ opacity: 0 }}
-                  doneStyle={{ opacity: 1 }}
-                  shouldAnimate={isInViewport}
-                  element={
-                    <Typography variant="sectionHeader" color="accent">
-                      My Portfolio
-                    </Typography>
-                  }
-                />
-              </Grid>
-              <Grid>
-                <Animation
-                  animationName="fadeInScale"
-                  duration={500}
-                  delay={500}
-                  beforeStyle={{ opacity: 0 }}
-                  doneStyle={{ opacity: 1 }}
-                  shouldAnimate={isInViewport}
-                  element={
-                    <Typography
-                      fontSize={24}
-                      lineHeight="32px"
-                      color="secondary"
-                    >
-                      Want to see some of my other projects? Check out my public
-                      repos in{" "}
-                      <Link
-                        color="text.primary"
-                        fontWeight="bold"
-                        href="https://github.com/MEnfield"
-                      >
-                        Github
-                      </Link>
-                    </Typography>
-                  }
-                />
-              </Grid>
-            </Grid>
-
-            <Grid
-              container
-              direction="row"
-              spacing={2}
-              alignItems="stretch"
-              flexWrap="wrap"
-            >
-              {projects.map((project, index) => (
-                <Animation
-                  key={project.title}
-                  animationName="horizontalFlip"
-                  duration={500}
-                  delay={350 * (index + 1)}
-                  beforeStyle={{ opacity: 0 }}
-                  doneStyle={{ opacity: 1 }}
-                  animationEasing="linear"
-                  shouldAnimate={isInViewport}
-                  element={
-                    <Grid size={{ xs: 12, md: 6, lg: "grow" }}>
-                      <ProjectCard {...project} />
-                    </Grid>
-                  }
-                />
-              ))}
-            </Grid>
-          </Grid>
-        </Box>
-      </div>
-    </Waypoint>
-  );
-};
+          <Reveal delay={index * 80}>
+            <ProjectCard {...project} />
+          </Reveal>
+        </Grid>
+      ))}
+    </Grid>
+  </Section>
+);
 
 export default Projects;

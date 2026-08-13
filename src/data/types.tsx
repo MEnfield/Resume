@@ -1,19 +1,33 @@
-import { ReactElement } from "react";
-
 export type Work = {
-  title: string;
   company: string;
+  title: string;
   time: string;
-  description: string;
-  icon: ReactElement;
+  meta: string;
+  bullets: string[];
+  icon?: string;
+  current?: boolean;
 };
 
 export type Project = {
   title: string;
+  tagline: string;
   description: string;
-  githubUrl: string;
-  figmaUrl: string;
-  previewUrl: string;
+  stack: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+  figmaUrl?: string;
+  previewUrl?: string;
+  featured?: boolean;
+};
+
+export type SkillGroup = {
+  label: string;
+  items: string[];
+};
+
+export type Stat = {
+  value: string;
+  label: string;
 };
 
 export type SidenavLink = {

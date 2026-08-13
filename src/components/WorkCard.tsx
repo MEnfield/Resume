@@ -1,89 +1,121 @@
-import { Divider, Grid, Paper, Typography, useMediaQuery } from "@mui/material";
-import { FC, ReactElement } from "react";
+import { Box, Chip, Stack, Typography } from "@mui/material";
+import { FC } from "react";
+import { Work } from "../data/types";
 
-const WorkCard: FC<{
-  title: string;
-  company: string;
-  time: string;
-  description: string;
-  icon: string;
-}> = ({ title, company, time, description, icon }) => {
-  // Component variables
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
-
-  // Component state
-
-  // Component effects
-
-  // Function binding
-
-  return (
-    <Paper
-      sx={{ p: (theme) => theme.spacing(2, 4), borderRadius: 4 }}
-      elevation={2}
+const WorkCard: FC<Work> = ({
+  company,
+  title,
+  time,
+  meta,
+  bullets,
+  icon,
+  current,
+}) => (
+  <Box
+    sx={{
+      position: "relative",
+      pl: { xs: 3, md: 4.5 },
+      pb: { xs: 4, md: 5 },
+      // timeline rail + node
+      "&:not(:last-of-type)::before": {
+        content: '""',
+        position: "absolute",
+        left: { xs: 5, md: 7 },
+        top: 18,
+        bottom: 0,
+        width: "2px",
+        bgcolor: "divider",
+      },
+      "&::after": {
+        content: '""',
+        position: "absolute",
+        left: 0,
+        top: 6,
+        width: { xs: 12, md: 16 },
+        height: { xs: 12, md: 16 },
+        borderRadius: "50%",
+        bgcolor: current ? "primary.main" : "background.default",
+        border: 2,
+        borderColor: "primary.main",
+      },
+    }}
+  >
+    <Stack
+      direction={{ xs: "column", sm: "row" }}
+      justifyContent="space-between"
+      alignItems={{ xs: "flex-start", sm: "baseline" }}
+      gap={0.5}
     >
-      <Grid container direction="column" gap={3}>
-        <Grid container direction="row" alignItems="center" gap={2}>
-          <Grid
-            container
-            direction="row"
-            alignItems="center"
-            gap={2}
-            wrap="nowrap"
-          >
-            {!!icon && (
-              <Grid>
-                <img src={icon} style={{ borderRadius: "3px" }} />
-              </Grid>
-            )}
-            <Grid>
-              <Typography
-                color="secondary"
-                fontWeight="bold"
-                fontSize={32}
-                lineHeight="36px"
-              >
-                {company}
-              </Typography>
-            </Grid>
-          </Grid>
-          {!isMobile && (
-            <Grid>
-              <Divider orientation="vertical" sx={{ height: "32px" }} />
-            </Grid>
-          )}
-          <Grid container direction="column">
-            <Grid>
-              <Typography
-                color="secondary"
-                fontWeight="bold"
-                fontSize={20}
-                lineHeight="24px"
-              >
-                {title}
-              </Typography>
-            </Grid>
-            <Grid>
-              <Typography
-                fontStyle="italic"
-                color="secondary"
-                fontSize={16}
-                lineHeight="18px"
-              >
-                {time}
-              </Typography>
-            </Grid>
-          </Grid>
-        </Grid>
+      <Stack direction="row" alignItems="center" gap={1.25} flexWrap="wrap">
+        {icon && (
+          <Box
+            component="img"
+            src={icon}
+            alt=""
+            aria-hidden
+            sx={{ height: 22, width: "auto", borderRadius: "3px" }}
+          />
+        )}
+        <Typography
+          variant="h3"
+          sx={{ fontSize: { xs: "1.2rem", md: "1.35rem" } }}
+        >
+          {company}
+        </Typography>
+        {current && (
+          <Chip
+            label="Current"
+            size="small"
+            color="primary"
+            variant="outlined"
+            sx={{ height: 22, fontSize: 11 }}
+          />
+        )}
+      </Stack>
+      <Typography variant="eyebrow" component="p" color="text.secondary">
+        {time}
+      </Typography>
+    </Stack>
 
-        <Grid>
-          <Typography fontSize={20} lineHeight="24px" color="text.primary">
-            {description}
+    <Typography
+      sx={{ mt: 0.5, fontWeight: 600, color: "primary.main", fontSize: "1rem" }}
+    >
+      {title}
+    </Typography>
+    <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>
+      {meta}
+    </Typography>
+
+    <Stack component="ul" spacing={1} sx={{ mt: 2, pl: 0, listStyle: "none" }}>
+      {bullets.map((bullet) => (
+        <Stack
+          key={bullet}
+          component="li"
+          direction="row"
+          spacing={1.25}
+          alignItems="flex-start"
+        >
+          <Box
+            aria-hidden
+            sx={{
+              mt: "8px",
+              flex: "0 0 auto",
+              width: 5,
+              height: 5,
+              borderRadius: "50%",
+              bgcolor: "primary.main",
+            }}
+          />
+          <Typography
+            variant="body2"
+            sx={{ lineHeight: 1.65, color: "text.secondary" }}
+          >
+            {bullet}
           </Typography>
-        </Grid>
-      </Grid>
-    </Paper>
-  );
-};
+        </Stack>
+      ))}
+    </Stack>
+  </Box>
+);
 
 export default WorkCard;

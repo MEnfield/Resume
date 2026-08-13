@@ -1,87 +1,109 @@
-import { Box, Grid, Link, Typography } from "@mui/material";
-import { FC, useState } from "react";
-import Animation from "../components/Animation";
-import { Waypoint } from "react-waypoint";
+import { Box, Button, Container, Divider, Stack, Typography } from "@mui/material";
+import { Download, GitHub, LinkedIn, Mail, Phone } from "@mui/icons-material";
+import { FC } from "react";
+import ResumePdf from "../assets/Resume.pdf";
+import Reveal from "../components/Reveal";
+import { profile } from "../data/data";
 
-const Footer: FC = ({}) => {
-  // Component variables
-  const [isInViewport, setIsInViewport] = useState(false);
+const Footer: FC = () => (
+  <Box
+    component="footer"
+    id="contact"
+    sx={{
+      scrollMarginTop: "72px",
+      py: { xs: 8, md: 12 },
+      borderTop: 1,
+      borderColor: "divider",
+      background: (theme) =>
+        `radial-gradient(900px 380px at 50% 0%, ${theme.palette.primary.main}1A, transparent 65%)`,
+    }}
+  >
+    <Container maxWidth="lg">
+      <Reveal>
+        <Stack spacing={2.5} alignItems="center" textAlign="center">
+          <Typography variant="sectionLabel" component="p" color="primary.main">
+            Contact
+          </Typography>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={{ fontSize: { xs: "1.9rem", md: "2.5rem" } }}
+          >
+            Let's build something.
+          </Typography>
+          <Typography sx={{ maxWidth: 560, color: "text.secondary" }}>
+            I'm open to senior full-stack and front-end roles. The fastest way to
+            reach me is email — I answer everything.
+          </Typography>
 
-  // Component state
+          <Stack
+            direction="row"
+            flexWrap="wrap"
+            justifyContent="center"
+            gap={1.5}
+            sx={{ pt: 1 }}
+          >
+            <Button
+              variant="contained"
+              startIcon={<Mail />}
+              component="a"
+              href={`mailto:${profile.email}`}
+            >
+              {profile.email}
+            </Button>
+            <Button
+              variant="outlined"
+              startIcon={<Phone />}
+              component="a"
+              href={profile.phoneHref}
+            >
+              {profile.phone}
+            </Button>
+            <Button
+              variant="outlined"
+              startIcon={<Download />}
+              component="a"
+              href={ResumePdf}
+              download="Mitchell Enfield - Resume.pdf"
+            >
+              Resume
+            </Button>
+          </Stack>
 
-  // Component effects
+          <Stack direction="row" gap={1} sx={{ pt: 0.5 }}>
+            <Button
+              size="small"
+              startIcon={<GitHub />}
+              component="a"
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+              color="inherit"
+            >
+              GitHub
+            </Button>
+            <Button
+              size="small"
+              startIcon={<LinkedIn />}
+              component="a"
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              color="inherit"
+            >
+              LinkedIn
+            </Button>
+          </Stack>
 
-  // Function binding
-
-  return (
-    <Waypoint onEnter={() => setIsInViewport(true)}>
-      <div>
-        <Box
-          component="section"
-          id="contact"
-          sx={(theme) => ({
-            p: theme.spacing(8, 12),
-            borderTop: (theme) => `3px dotted ${theme.palette.accent.main}`,
-            backgroundColor: "secondary.main",
-            [theme.breakpoints.down("md")]: {
-              p: (theme) => theme.spacing(2, 2, 2, 2),
-            },
-          })}
-        >
-          <Grid container direction="column" gap={2} textAlign="center">
-            <Animation
-              animationName="fadeInScale"
-              duration={500}
-              beforeStyle={{ opacity: 0 }}
-              doneStyle={{ opacity: 1 }}
-              shouldAnimate={isInViewport}
-              element={
-                <Grid>
-                  <Typography variant="sectionHeader" color="white">
-                    Still Reading?
-                  </Typography>
-                </Grid>
-              }
-            />
-            <Animation
-              animationName="fadeInScale"
-              delay={200}
-              duration={500}
-              beforeStyle={{ opacity: 0 }}
-              doneStyle={{ opacity: 1 }}
-              shouldAnimate={isInViewport}
-              element={
-                <Grid>
-                  <Typography fontSize={24} lineHeight="32px" color="white">
-                    Thank you for taking the time to look through my webpage. If
-                    you're interested in linking up, please reach out to me!{" "}
-                    <br />
-                    My email is{" "}
-                    <Link
-                      fontWeight="bold"
-                      href="mailto:MitchEnfield@gmail.com"
-                      color="text.primary"
-                    >
-                      MitchEnfield@gmail.com
-                    </Link>{" "}
-                    and my work phone is{" "}
-                    <Link
-                      fontWeight="bold"
-                      href="tel:5616990925"
-                      color="text.primary"
-                    >
-                      (561)699-0925
-                    </Link>
-                    .
-                  </Typography>
-                </Grid>
-              }
-            />
-          </Grid>
-        </Box>
-      </div>
-    </Waypoint>
-  );
-};
+          <Divider flexItem sx={{ pt: 2, borderColor: "transparent" }} />
+          <Typography variant="body2" color="text.secondary">
+            © {new Date().getFullYear()} {profile.name} · Built with React, MUI,
+            and Vite
+          </Typography>
+        </Stack>
+      </Reveal>
+    </Container>
+  </Box>
+);
 
 export default Footer;

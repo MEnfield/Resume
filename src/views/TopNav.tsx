@@ -50,16 +50,20 @@ const TopNav: FC = () => {
         position="fixed"
         elevation={0}
         color="transparent"
-        sx={{
-          backdropFilter: "saturate(180%) blur(12px)",
-          bgcolor: (theme) =>
-            scrolled
-              ? `rgba(${theme.palette.mode === "dark" ? "11,21,34" : "255,255,255"}, 0.86)`
-              : "transparent",
+        sx={(theme) => ({
+          backdropFilter: scrolled ? "saturate(180%) blur(12px)" : "none",
           borderBottom: 1,
           borderColor: scrolled ? "divider" : "transparent",
           transition: "background-color .25s ease, border-color .25s ease",
-        }}
+          // The theme uses CSS variables, so one stylesheet serves both schemes.
+          // A JS ternary on palette.mode would resolve once at style-generation
+          // time and pin the bar to the light colour; applyStyles emits a real
+          // dark-scheme rule instead.
+          backgroundColor: scrolled ? "rgba(255, 255, 255, 0.86)" : "transparent",
+          ...theme.applyStyles("dark", {
+            backgroundColor: scrolled ? "rgba(11, 21, 34, 0.86)" : "transparent",
+          }),
+        })}
       >
         <Toolbar sx={{ gap: 1, minHeight: { xs: 60, md: 64 } }}>
           <Link

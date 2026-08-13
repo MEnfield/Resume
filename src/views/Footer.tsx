@@ -9,14 +9,18 @@ const Footer: FC = () => (
   <Box
     component="footer"
     id="contact"
-    sx={{
+    sx={(theme) => ({
       scrollMarginTop: "72px",
       py: { xs: 8, md: 12 },
       borderTop: 1,
       borderColor: "divider",
-      background: (theme) =>
-        `radial-gradient(900px 380px at 50% 0%, ${theme.palette.primary.main}1A, transparent 65%)`,
-    }}
+      background:
+        "radial-gradient(900px 380px at 50% 0%, #1A5FB41A, transparent 65%)",
+      ...theme.applyStyles("dark", {
+        background:
+          "radial-gradient(900px 380px at 50% 0%, #6BA6F521, transparent 65%)",
+      }),
+    })}
   >
     <Container maxWidth="lg">
       <Reveal>

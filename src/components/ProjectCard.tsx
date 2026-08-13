@@ -22,7 +22,7 @@ const ProjectCard: FC<Project> = ({
 }) => (
   <Paper
     variant="outlined"
-    sx={{
+    sx={(theme) => ({
       height: "100%",
       p: { xs: 2.5, md: featured ? 4 : 3 },
       borderRadius: 3,
@@ -32,9 +32,15 @@ const ProjectCard: FC<Project> = ({
       transition: "transform .2s ease, box-shadow .2s ease",
       "&:hover": {
         transform: "translateY(-3px)",
-        boxShadow: (theme) => `0 12px 32px ${theme.palette.primary.main}1F`,
+        boxShadow: "0 12px 32px #1A5FB41F",
       },
-    }}
+      ...theme.applyStyles("dark", {
+        "&:hover": {
+          transform: "translateY(-3px)",
+          boxShadow: "0 12px 32px #6BA6F529",
+        },
+      }),
+    })}
   >
     <Stack
       direction="row"

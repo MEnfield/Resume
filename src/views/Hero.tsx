@@ -18,16 +18,21 @@ const Hero: FC = () => (
   <Box
     component="header"
     id="about"
-    sx={{
+    sx={(theme) => ({
       position: "relative",
       overflow: "hidden",
       pt: { xs: 12, md: 16 },
       pb: { xs: 7, md: 10 },
-      // soft brand wash instead of the old hard teal gradient + wave
-      background: (theme) =>
-        `radial-gradient(1100px 460px at 12% -12%, ${theme.palette.primary.main}1F, transparent 62%),
-         radial-gradient(900px 420px at 88% 0%, ${theme.palette.primary.main}14, transparent 60%)`,
-    }}
+      // soft brand wash instead of the old hard teal gradient + wave.
+      // Hex literals per scheme: under cssVariables, palette.primary.main
+      // resolves to the light value only, so it would not adapt on its own.
+      background: `radial-gradient(1100px 460px at 12% -12%, #1A5FB41F, transparent 62%),
+         radial-gradient(900px 420px at 88% 0%, #1A5FB414, transparent 60%)`,
+      ...theme.applyStyles("dark", {
+        background: `radial-gradient(1100px 460px at 12% -12%, #6BA6F526, transparent 62%),
+           radial-gradient(900px 420px at 88% 0%, #6BA6F517, transparent 60%)`,
+      }),
+    })}
   >
     <Container maxWidth="lg">
       <Grid container spacing={{ xs: 5, md: 8 }} alignItems="center">

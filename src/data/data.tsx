@@ -24,7 +24,7 @@ and deploys.`,
 export const stats: Stat[] = [
   { value: "10 yrs", label: "Building software professionally" },
   { value: "Since 2017", label: "Shipping React in production" },
-  { value: "8 apps", label: "Shipped across 4 employers" },
+  { value: "8 apps", label: "Shipped across 5 employers" },
 ];
 
 export const jobs: Work[] = [
@@ -32,7 +32,7 @@ export const jobs: Work[] = [
     company: "Allstate",
     title: "Software Engineer, Senior Consultant II",
     time: "Dec 2025 – Present",
-    meta: "Remote · Part-time",
+    meta: "Remote · Full-time",
     current: true,
     bullets: [
       "Lead full-stack development across a TypeScript monorepo powering a suite of health-insurance products — a consumer shopping platform, employer and employee portals, and internal agent tooling.",
@@ -61,14 +61,25 @@ export const jobs: Work[] = [
   {
     company: "Simpli.fi",
     title: "Senior UI/UX Developer",
-    time: "Feb 2019 – Dec 2025",
+    time: "Mar 2023 – Dec 2025",
     meta: "Remote · Full-time",
     icon: SimplifiLogo,
     bullets: [
-      "Architected and led the migration of a legacy AngularJS codebase to a modern React + TypeScript stack, cutting technical debt and reducing feature development time.",
+      "Carried the same DSP through Simpli.fi's acquisition of Bidtellect and its rebrand to the Simpli.fi DSP, continuing to own its front end without a break in delivery.",
       "Led UI/UX for new product features, translating user needs and business goals into high-fidelity mockups and interactive prototypes in Figma.",
-      "Architected scalable client-side solutions in React and TypeScript with an emphasis on maintainability and runtime performance.",
       "Mentored junior developers on front-end best practices and modern TypeScript, raising code quality and consistency across the team.",
+    ],
+  },
+  {
+    company: "Bidtellect",
+    title: "Senior UI/UX Developer",
+    time: "Feb 2019 – Mar 2023",
+    meta: "Remote · Full-time",
+    icon: BidtellectLogo,
+    bullets: [
+      "Architected and led the migration of the Bidtellect DSP — a real-time bidding and ad-serving platform — from a legacy AngularJS codebase to a modern React + TypeScript stack, cutting technical debt and reducing feature development time.",
+      "Built the DSP's reporting surface — sortable, filterable breakdowns across campaign, placement, and creative dimensions — using windowed rendering to keep tables of thousands of rows interactive.",
+      "Profiled and reduced render cost across the DSP's data-heavy screens through memoization, list virtualization, and payload trimming, improving responsiveness on the largest accounts.",
     ],
   },
   {
@@ -123,7 +134,15 @@ installable PWA with offline support.`,
 export const skillGroups: SkillGroup[] = [
   {
     label: "Languages & Frameworks",
-    items: ["TypeScript", "JavaScript", "React", "Next.js", "Node.js", "Express"],
+    items: [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "TanStack Query",
+      "Node.js",
+      "Express",
+    ],
   },
   {
     label: "Front-End",

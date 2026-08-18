@@ -53,7 +53,7 @@ SUMMARY = (
 )
 
 SKILLS = [
-    ("Languages & Frameworks", "TypeScript, JavaScript, React, Next.js, Node.js, Express"),
+    ("Languages & Frameworks", "TypeScript, JavaScript, React, Next.js, TanStack Query, Node.js, Express"),
     ("Front-End", "Design systems, Storybook, MUI, Tailwind / shadcn, WCAG accessibility, responsive UI"),
     ("Back-End & Data", "REST API design, Zod, MySQL, PostgreSQL, SQL Server, Prisma"),
     ("Testing", "Vitest, Mock Service Worker, React Testing Library, Jest"),
@@ -64,7 +64,7 @@ JOBS = [
     dict(
         company="Allstate",
         role="Software Engineer, Senior Consultant II",
-        meta="Remote  ·  Part-time  ·  Dec 2025 – Present",
+        meta="Remote  ·  Full-time  ·  Dec 2025 – Present",
         bullets=[
             "Lead full-stack development across a TypeScript monorepo powering a suite of health-insurance "
             "products — a consumer shopping platform, employer and employee portals, and internal agent tooling.",
@@ -107,16 +107,29 @@ JOBS = [
     dict(
         company="Simpli.fi",
         role="Senior UI/UX Developer",
-        meta="Remote  ·  Full-time  ·  Feb 2019 – Dec 2025",
+        meta="Remote  ·  Full-time  ·  Mar 2023 – Dec 2025",
         bullets=[
-            "Architected and led the migration of a legacy AngularJS codebase to a modern React + TypeScript stack, "
-            "cutting technical debt and reducing feature development time.",
+            "Carried the same DSP through Simpli.fi's acquisition of Bidtellect and its rebrand to the "
+            "Simpli.fi DSP, continuing to own its front end without a break in delivery.",
             "Led UI/UX for new product features, translating user needs and business goals into high-fidelity "
             "mockups and interactive prototypes in Figma.",
-            "Architected scalable client-side solutions in React and TypeScript with an emphasis on maintainability "
-            "and runtime performance.",
             "Mentored junior developers on front-end best practices and modern TypeScript, raising code quality and "
             "consistency across the team.",
+        ],
+    ),
+    dict(
+        company="Bidtellect",
+        role="Senior UI/UX Developer",
+        meta="Remote  ·  Full-time  ·  Feb 2019 – Mar 2023",
+        bullets=[
+            "Architected and led the migration of the Bidtellect DSP — a real-time bidding and ad-serving "
+            "platform — from a legacy AngularJS codebase to a modern React + TypeScript stack, cutting "
+            "technical debt and reducing feature development time.",
+            "Built the DSP's reporting surface — sortable, filterable breakdowns across campaign, placement, "
+            "and creative dimensions — using windowed rendering to keep tables of thousands of rows "
+            "interactive.",
+            "Profiled and reduced render cost across the DSP's data-heavy screens through memoization, list "
+            "virtualization, and payload trimming, improving responsiveness on the largest accounts.",
         ],
     ),
     dict(
@@ -179,7 +192,7 @@ LINKS = [
 STATS = [
     ("10 yrs", "Building software professionally"),
     ("Since 2017", "Shipping React in production"),
-    ("8 apps", "Shipped across 4 employers"),
+    ("8 apps", "Shipped across 5 employers"),
 ]
 
 # ---------------------------------------------------------------- layout

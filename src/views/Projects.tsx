@@ -12,7 +12,7 @@ const Projects: FC = () => (
     title="Built and run solo"
     intro={
       <>
-        A product I designed, built, and operate end to end — not a demo. More
+        A product I designed, built, and operate end to end. It's live, not a demo. More
         code on{" "}
         <Link href={profile.github} target="_blank" rel="noreferrer">
           GitHub

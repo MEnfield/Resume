@@ -37,7 +37,7 @@ const Footer: FC = () => (
           </Typography>
           <Typography sx={{ maxWidth: 560, color: "text.secondary" }}>
             I'm open to senior full-stack and front-end roles. The fastest way to
-            reach me is email — I answer everything.
+            reach me is email. I answer everything.
           </Typography>
 
           <Stack

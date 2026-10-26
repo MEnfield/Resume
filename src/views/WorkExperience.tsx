@@ -13,7 +13,7 @@ const WorkExperience: FC = () => (
     tinted
     intro={
       <>
-        A decade across insurance, adtech, and fleet safety — most recently
+        A decade across insurance, adtech, and fleet safety, most recently
         owning design systems and front-end architecture. More detail on{" "}
         <Link href={profile.linkedin} target="_blank" rel="noreferrer">
           LinkedIn

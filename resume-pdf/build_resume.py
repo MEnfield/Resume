@@ -48,7 +48,7 @@ SUMMARY = (
     "Full-stack engineer with 10 years shipping product, the last 7 in TypeScript. Currently own the shared component "
     "library and design-system tooling behind a health-insurance platform, used across its consumer and "
     "employer-facing applications. Outside of work I designed, built, and run Riff Circle, a "
-    "production social platform for musicians, entirely on my own — schema and migrations through to billing, "
+    "production social platform for musicians, entirely on my own, from schema and migrations through billing, "
     "monitoring, and deploys."
 )
 
@@ -67,21 +67,21 @@ JOBS = [
         meta="Remote  ·  Full-time  ·  Dec 2025 – Present",
         bullets=[
             "Lead full-stack development across a TypeScript monorepo powering a suite of health-insurance "
-            "products — a consumer shopping platform, employer and employee portals, and internal agent tooling.",
+            "products: a consumer shopping platform, employer and employee portals, and internal agent tooling.",
 
-            "Own the shared React component library used by the platform's 3 applications — component "
+            "Own the shared React component library used by the platform's 3 applications, including component "
             "architecture, multi-brand theming through a build-time brand-CSS package, accessibility baseline, "
             "documentation, and test coverage.",
 
-            "Created a Figma-to-code pipeline — a design-token fetch script plus a documented AI workflow — "
+            "Created a Figma-to-code pipeline (a design-token fetch script plus a documented AI workflow) "
             "that turns a Figma component link into a themed, tested library component, eliminating a recurring "
             "class of design-parity defects.",
 
             "Led front-end delivery of a group health-benefits quoting experience, rolled out incrementally behind "
             "feature flags, covering benefit configuration, live cost calculations, and per-employee breakdowns.",
 
-            "Shipped a bulk employer-data migration workflow end-to-end in the agent portal — typed API client, "
-            "upload validation, and long-running job status — and extended shared Zod schemas across the "
+            "Shipped a bulk employer-data migration workflow end-to-end in the agent portal, covering the typed API "
+            "client, upload validation, and long-running job status. Extended shared Zod schemas across the "
             "API/portal boundary so contract changes surface as compile-time errors.",
 
             "Established the front-end testing standard, introducing shared API-mocking infrastructure and "
@@ -94,7 +94,7 @@ JOBS = [
         meta="Remote  ·  Part-time  ·  Jun 2023 – Dec 2025",
         bullets=[
             "Built features for Allstate's group-policy health-insurance application, used to onboard and manage "
-            "employer customers — the work that led to a full-time role on Allstate's own team.",
+            "employer customers. This work led to a full-time role on Allstate's own team.",
             "Implemented server-side rendering and API routes in Next.js to improve performance and SEO.",
             "Built responsive, accessible UI components in TypeScript, React, and Next.js for desktop and mobile.",
             "Modeled and queried MySQL data covering policy records, customer groups, and transactional history.",
@@ -106,11 +106,11 @@ JOBS = [
         note="Bidtellect, acquired by Simpli.fi in Mar 2023",
         meta="Remote  ·  Full-time  ·  Feb 2019 – Dec 2025",
         bullets=[
-            "Architected and led the migration of the Bidtellect DSP — a real-time bidding and ad-serving "
-            "platform — from a legacy AngularJS codebase to a modern React + TypeScript stack, cutting "
+            "Architected and led the migration of the Bidtellect DSP, a real-time bidding and ad-serving "
+            "platform, from a legacy AngularJS codebase to a modern React + TypeScript stack, cutting "
             "technical debt and reducing feature development time.",
-            "Built the DSP's reporting surface — sortable, filterable breakdowns across campaign, placement, "
-            "and creative dimensions — using windowed rendering to keep tables of thousands of rows "
+            "Built the DSP's reporting surface with sortable, filterable breakdowns across campaign, placement, "
+            "and creative dimensions, using windowed rendering to keep tables of thousands of rows "
             "interactive.",
             "Profiled and reduced render cost across the DSP's data-heavy screens through memoization, list "
             "virtualization, and payload trimming, improving responsiveness on the largest accounts.",
@@ -152,11 +152,11 @@ PROJECT = dict(
     url_label="riffcircle.com",
     tag="Sole designer, engineer, and operator",
     bullets=[
-        "Designed and built a production social platform for musicians — map-based discovery of nearby players, "
-        "gigs, jam sessions, and lessons — as a TypeScript monorepo on Next.js, tRPC, Prisma, and "
+        "Designed and built a production social platform for musicians with map-based discovery of nearby "
+        "players, gigs, jam sessions, and lessons. Runs as a TypeScript monorepo on Next.js, tRPC, Prisma, and "
         "PostgreSQL/PostGIS, with a shared UI package documented in Storybook.",
 
-        "Modeled the full relational domain — events, bands, setlists, messaging, reviews, and social graphs — "
+        "Modeled the full relational domain (events, bands, setlists, messaging, reviews, and social graphs), "
         "evolved safely through versioned migrations and exposed via type-safe tRPC routers.",
 
         "Ran the full production surface solo: Stripe billing with webhook reconciliation, Redis-backed rate "

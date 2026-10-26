@@ -45,7 +45,7 @@ CONTACT = [
 PORTFOLIO_URL = "https://menfield.github.io/Resume/"
 
 SUMMARY = (
-    "Full-stack engineer with 10 years shipping product in TypeScript. Currently own the shared component "
+    "Full-stack engineer with 10 years shipping product, the last 7 in TypeScript. Currently own the shared component "
     "library and design-system tooling behind a health-insurance platform, used across its consumer and "
     "employer-facing applications. Outside of work I designed, built, and run Riff Circle, a "
     "production social platform for musicians, entirely on my own — schema and migrations through to billing, "
@@ -69,8 +69,9 @@ JOBS = [
             "Lead full-stack development across a TypeScript monorepo powering a suite of health-insurance "
             "products — a consumer shopping platform, employer and employee portals, and internal agent tooling.",
 
-            "Own the shared React component library used across the platform's applications — component "
-            "architecture, theming API, accessibility baseline, documentation, and test coverage.",
+            "Own the shared React component library used by the platform's 3 applications — component "
+            "architecture, multi-brand theming through a build-time brand-CSS package, accessibility baseline, "
+            "documentation, and test coverage.",
 
             "Created a Figma-to-code pipeline — a design-token fetch script plus a documented AI workflow — "
             "that turns a Figma component link into a themed, tested library component, eliminating a recurring "
@@ -79,17 +80,12 @@ JOBS = [
             "Led front-end delivery of a group health-benefits quoting experience, rolled out incrementally behind "
             "feature flags, covering benefit configuration, live cost calculations, and per-employee breakdowns.",
 
-            "Shipped a bulk employer-data migration workflow end-to-end in the agent portal, from typed API client "
-            "through upload validation and long-running job status.",
+            "Shipped a bulk employer-data migration workflow end-to-end in the agent portal — typed API client, "
+            "upload validation, and long-running job status — and extended shared Zod schemas across the "
+            "API/portal boundary so contract changes surface as compile-time errors.",
 
             "Established the front-end testing standard, introducing shared API-mocking infrastructure and "
             "eliminating flaky, time-dependent tests across the suite.",
-
-            "Implemented multi-brand theming through a build-time brand-CSS package, letting one component library "
-            "render distinct branded experiences across consumer, employer, and employee applications.",
-
-            "Drove accessibility and responsive fixes across the library and shopping flows, and extended shared "
-            "Zod schemas across the API/portal boundary so contract changes surface as compile-time errors.",
         ],
     ),
     dict(
@@ -97,30 +93,18 @@ JOBS = [
         role="Full-Stack Developer (Contract)",
         meta="Remote  ·  Part-time  ·  Jun 2023 – Dec 2025",
         bullets=[
-            "Built features for the health-insurance application Allstate uses to onboard and manage group-policy "
-            "customers.",
+            "Built features for Allstate's group-policy health-insurance application, used to onboard and manage "
+            "employer customers — the work that led to a full-time role on Allstate's own team.",
             "Implemented server-side rendering and API routes in Next.js to improve performance and SEO.",
             "Built responsive, accessible UI components in TypeScript, React, and Next.js for desktop and mobile.",
             "Modeled and queried MySQL data covering policy records, customer groups, and transactional history.",
         ],
     ),
     dict(
-        company="Simpli.fi",
+        company="Simpli.fi (formerly Bidtellect)",
         role="Senior UI/UX Developer",
-        meta="Remote  ·  Full-time  ·  Mar 2023 – Dec 2025",
-        bullets=[
-            "Carried the same DSP through Simpli.fi's acquisition of Bidtellect and its rebrand to the "
-            "Simpli.fi DSP, continuing to own its front end without a break in delivery.",
-            "Led UI/UX for new product features, translating user needs and business goals into high-fidelity "
-            "mockups and interactive prototypes in Figma.",
-            "Mentored junior developers on front-end best practices and modern TypeScript, raising code quality and "
-            "consistency across the team.",
-        ],
-    ),
-    dict(
-        company="Bidtellect",
-        role="Senior UI/UX Developer",
-        meta="Remote  ·  Full-time  ·  Feb 2019 – Mar 2023",
+        note="Bidtellect, acquired by Simpli.fi in Mar 2023",
+        meta="Remote  ·  Full-time  ·  Feb 2019 – Dec 2025",
         bullets=[
             "Architected and led the migration of the Bidtellect DSP — a real-time bidding and ad-serving "
             "platform — from a legacy AngularJS codebase to a modern React + TypeScript stack, cutting "
@@ -130,6 +114,10 @@ JOBS = [
             "interactive.",
             "Profiled and reduced render cost across the DSP's data-heavy screens through memoization, list "
             "virtualization, and payload trimming, improving responsiveness on the largest accounts.",
+            "Led UI/UX for new product features, translating user needs and business goals into high-fidelity "
+            "mockups and interactive prototypes in Figma.",
+            "Mentored 4 developers on front-end best practices and modern TypeScript, raising code quality and "
+            "consistency across the team.",
         ],
     ),
     dict(
@@ -137,8 +125,8 @@ JOBS = [
         role="Full-Stack Software Engineer",
         meta="Deerfield Beach, FL  ·  Full-time  ·  Jan 2017 – Feb 2019",
         bullets=[
-            "Contributed to a full redesign of a legacy web application, modernizing the stack with Node.js, "
-            "Express, and React to improve performance and maintainability.",
+            "Rebuilt a legacy web application on a modernized Node.js, Express, and React stack as part of a "
+            "full redesign, improving performance and maintainability.",
             "Developed RESTful APIs in Node.js and Express to handle data operations and business logic, enabling a "
             "more modular and scalable backend.",
             "Designed SQL Server queries and stored procedures to support new features and optimize database "
@@ -184,15 +172,8 @@ EDU = dict(
 )
 
 LINKS = [
-    ("Stack Overflow", "1,000+ reputation", "https://stackoverflow.com/users/5380089/menf"),
     ("Portfolio", "menfield.github.io/Resume", "https://menfield.github.io/Resume/"),
     ("GitHub", "github.com/MEnfield", "https://github.com/MEnfield"),
-]
-
-STATS = [
-    ("10 yrs", "Building software professionally"),
-    ("Since 2017", "Shipping React in production"),
-    ("8 apps", "Shipped across 5 employers"),
 ]
 
 # ---------------------------------------------------------------- layout
@@ -318,6 +299,7 @@ class Doc:
 
     def bullet(self, s, size=9.1, lead=12.2, indent=12.5):
         lines = wrap(s, REG, size, CW - indent)
+        self.need(lead * len(lines))   # never split one bullet across a page break
         for i, ln in enumerate(lines):
             self.need(lead)
             if i == 0:
@@ -335,44 +317,13 @@ class Doc:
         self.text(ML + CW - mw, self.y, j["meta"], REG, 8.5, MUTED)
         self.y += 12.8
         self.text(ML, self.y, j["role"], SB, 9.8, ACCENT)
+        if j.get("note"):
+            nx = ML + pdfmetrics.stringWidth(j["role"], SB, 9.8)
+            self.text(nx, self.y, "  ·  " + j["note"], REG, 8.8, MUTED)
         self.y += 13.2
         for b in j["bullets"]:
             self.bullet(b)
         self.y += 8.5
-
-    def stats(self, items):
-        """Scan-bait strip: four quantified facts under the summary."""
-        self.space(14)
-        pad, fs, cs = 16, 6.8, 0.4
-        col = (CW - pad) / len(items)
-        avail = col - 10
-
-        wrapped = []
-        for num, label in items:
-            lines, cur = [], ""
-            for wd in label.upper().split():
-                trial = wd if not cur else cur + " " + wd
-                if self.width(trial, SB, fs, cs) <= avail:
-                    cur = trial
-                else:
-                    lines.append(cur)
-                    cur = wd
-            lines.append(cur)
-            wrapped.append((num, lines))
-
-        h = 34 + 8.6 * max(len(l) for _, l in wrapped)
-        self.need(h)
-        self.c.setFillColor(BAND)
-        self.c.rect(ML, H - self.y - h + 10, CW, h, stroke=0, fill=1)
-        self.c.setFillColor(ACCENT)
-        self.c.rect(ML, H - self.y - h + 10, 2.6, h, stroke=0, fill=1)
-
-        for i, (num, lines) in enumerate(wrapped):
-            cx = ML + pad + i * col
-            self.text(cx, self.y + 13, num, BLD, 15, ACCENT)
-            for j, ln in enumerate(lines):
-                self.text(cx, self.y + 25.5 + j * 8.6, ln, SB, fs, MUTED, char_space=cs)
-        self.y += h + 8
 
     def two_col_tail(self):
         """Education and Links side by side so the last page reads as designed."""
@@ -427,7 +378,6 @@ def build():
     d.header()
 
     d.para(SUMMARY, size=9.5, lead=13.2, color=BODY)
-    d.stats(STATS)
 
     d.section("Core Skills")
     d.skills()

@@ -1,17 +1,9 @@
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import { Download, GitHub, LinkedIn, Mail } from "@mui/icons-material";
 import { FC } from "react";
 import Headshot from "../assets/headshot.png";
 import ResumePdf from "../assets/Resume.pdf";
-import { profile, stats } from "../data/data";
+import { profile } from "../data/data";
 import Reveal from "../components/Reveal";
 
 const Hero: FC = () => (
@@ -165,61 +157,6 @@ const Hero: FC = () => (
           </Reveal>
         </Grid>
       </Grid>
-
-      {/* the same three claims that head the PDF */}
-      <Reveal delay={200}>
-        <Box
-          sx={{
-            mt: { xs: 6, md: 8 },
-            p: { xs: 2.5, md: 3 },
-            borderRadius: 3,
-            border: 1,
-            borderColor: "divider",
-            bgcolor: "background.paper",
-            borderLeft: 4,
-            borderLeftColor: "primary.main",
-          }}
-        >
-          <Grid container spacing={{ xs: 2.5, md: 3 }}>
-            {stats.map((stat, i) => (
-              <Grid key={stat.value} size={{ xs: 12, sm: 4 }}>
-                <Stack
-                  direction="row"
-                  spacing={{ xs: 0, md: 3 }}
-                  alignItems="stretch"
-                >
-                  {i > 0 && (
-                    <Divider
-                      orientation="vertical"
-                      flexItem
-                      sx={{ display: { xs: "none", md: "block" } }}
-                    />
-                  )}
-                  <Box>
-                    <Typography
-                      sx={{
-                        fontSize: { xs: "1.4rem", md: "1.6rem" },
-                        fontWeight: 700,
-                        color: "primary.main",
-                        lineHeight: 1.2,
-                      }}
-                    >
-                      {stat.value}
-                    </Typography>
-                    <Typography
-                      variant="eyebrow"
-                      component="p"
-                      sx={{ mt: 0.5, color: "text.secondary" }}
-                    >
-                      {stat.label}
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Reveal>
     </Container>
   </Box>
 );

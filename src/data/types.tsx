@@ -25,11 +25,6 @@ export type SkillGroup = {
   items: string[];
 };
 
-export type Stat = {
-  value: string;
-  label: string;
-};
-
 export type SidenavLink = {
   url: string;
   label: string;
